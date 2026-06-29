@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LLM-based Document Q&A — Jaehee Hur</title>
+  <link rel="stylesheet" href="../static/css/style.css" />
+  <link rel="stylesheet" href="../static/css/project-detail.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="../index.html">jh<span>.dev</span></a>
+  <div class="nav-links">
+    <a href="../career.html">Career</a>
+    <a href="../projects.html" class="active">Projects</a>
+  </div>
+</nav>
+
+<article class="project-detail">
+
+  <a class="project-back" href="../projects.html">← Back to Projects</a>
+
+  <div class="project-meta">
+    <span class="project-meta-label">Featured Project · 2024</span>
+  </div>
+
+  <h1>LLM-based Document Q&A System</h1>
+
+  <p class="project-detail-desc">
+    사내 문서(PDF, DOCX, 사내 위키 등)를 인덱싱하여 자연어로 질의응답할 수 있는
+    RAG(Retrieval-Augmented Generation) 파이프라인을 설계하고 구현한 프로젝트입니다.
+    기존에 문서 검색에 걸리던 시간을 대폭 줄이고, 정확한 출처와 함께 답변을 제공합니다.
+  </p>
+
+  <div class="project-links-row">
+    <a class="btn btn-primary" href="#" target="_blank">Live Demo ↗</a>
+    <a class="btn btn-ghost" href="#" target="_blank">GitHub ↗</a>
+  </div>
+
+  <div class="project-hero-img">🤖</div>
+
+  <div class="skills-section">
+    <p class="project-section-title">Skills & Technologies</p>
+    <div class="skills-grid">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">LangChain</span>
+      <span class="skill-tag">OpenAI API</span>
+      <span class="skill-tag">ChromaDB</span>
+      <span class="skill-tag">FastAPI</span>
+      <span class="skill-tag">Docker</span>
+      <span class="skill-tag">Streamlit</span>
+      <span class="skill-tag">AWS S3</span>
+    </div>
+  </div>
+
+  <div class="project-body">
+    <p class="project-section-title">Background</p>
+    <div class="project-body">
+      <p>
+        사내에 수백 개의 문서가 분산 저장되어 있어 필요한 정보를 찾는 데 평균 15분 이상 소요되는 문제가 있었습니다.
+        키워드 검색으로는 문맥을 파악하기 어렵고, 담당자에게 직접 물어봐야 하는 경우가 많았습니다.
+      </p>
+      <p>
+        이를 해결하기 위해 RAG 아키텍처를 기반으로, 문서를 청크 단위로 분리해 벡터 임베딩 후
+        ChromaDB에 저장하고, 사용자 질문과 유사한 청크를 검색해 LLM에 컨텍스트로 전달하는
+        파이프라인을 구축했습니다.
+      </p>
+    </div>
+
+    <p class="project-section-title">Key Achievements</p>
+    <div class="project-body">
+      <p>
+        • 문서 검색 시간 평균 15분 → 30초 이내로 단축<br />
+        • PDF, DOCX, Markdown, HTML 등 다양한 포맷 지원<br />
+        • 답변에 출처 문서 및 페이지 번호 함께 제공<br />
+        • Streamlit UI를 통해 비개발자도 손쉽게 사용 가능
+      </p>
+    </div>
+  </div>
+
+</article>
+
+<footer>
+  <p>Built with ♥ · Jaehee Hur © 2026</p>
+</footer>
+
+</body>
+</html>
+
+
+

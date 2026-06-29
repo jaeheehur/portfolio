@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TargetWiki — Jaehee Hur</title>
+  <link rel="stylesheet" href="../static/css/style.css" />
+  <link rel="stylesheet" href="../static/css/project-detail.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="../index.html">jh<span>.dev</span></a>
+  <div class="nav-links">
+    <a href="../career.html">Career</a>
+    <a href="../projects.html" class="active">Projects</a>
+  </div>
+</nav>
+
+<article class="project-detail">
+
+  <a class="project-back" href="../projects.html">← Back to Projects</a>
+
+  <div class="project-meta">
+    <span class="project-meta-label">LG Chem AX Technology Development Team · Apr. – Nov. 2023</span>
+  </div>
+
+  <h1>TargetWiki: Target Validation Report Auto-Generation Tool</h1>
+
+  <p class="project-detail-desc">
+    약 20개 외부 DB를 자동 크롤링해 GOT-IT 타겟 검증 리포트를 python-pptx로 자동 생성하는 툴.
+    비기술직 연구 환경을 위해 단일 클릭 exe로 패키징. 리서치 시간 87% 단축 (120분 → 5~20분).
+  </p>
+
+  <div class="skills-section">
+    <p class="project-section-title">Skills & Technologies</p>
+    <div class="skills-grid">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">BeautifulSoup</span>
+      <span class="skill-tag">Selenium</span>
+      <span class="skill-tag">python-pptx</span>
+      <span class="skill-tag">PyInstaller</span>
+      <span class="skill-tag">tkinter</span>
+      <span class="skill-tag">XPath</span>
+      <span class="skill-tag">Web Crawling</span>
+    </div>
+  </div>
+
+  <p class="project-section-title">Problem</p>
+  <div class="project-body">
+    <p>
+      신약 타겟 검증 리서치 시 연구원들이 약 20개 이상의 외부 DB(UniProt, GeneCards, ChEMBL 등)에 개별 접속하여
+      동일/유사 키워드를 반복적으로 입력하고 수집한 정보를 일일이 캡쳐 및 정리하여 수작업으로 리포트를 작성해야 했습니다.
+      건당 약 120분이 소요되었으며, 리서치 업무의 효율성 및 생산성 향상을 위한 자동화 프로그램 개발에 대한 강한 니즈가 있었습니다.
+    </p>
+  </div>
+
+  <p class="project-section-title">Solution</p>
+  <div class="project-body">
+    <p>
+      <b>크롤링 시스템:</b> BeautifulSoup과 Selenium을 활용하여 각 사이트별 크롤링 및 주요 데이터 로컬 내 저장 기능 구현.
+      사이트별 XPath 매핑, 오타 자동 교정, 팝업·쿠키 자동 처리 기능을 갖춘 강건한 크롤러 개발.
+    </p>
+    <p>
+      <b>속도 최적화:</b> 병렬 처리를 적용하여 프로그램 실행 속도를 대폭 최적화.
+      수집된 데이터는 python-pptx를 활용하여 콘텐츠 양에 무관하게 레이아웃이 동적으로 조정되는 표준화 GOT-IT 검증 리포트로 자동 변환됩니다.
+    </p>
+    <p>
+      <b>사용 편의성:</b> 비기술 연구 환경을 위해 설치 과정을 제거하고 PyInstaller + tkinter GUI로 패키징하여
+      단일 클릭 exe 파일로 End-to-End 실행을 지원합니다.
+    </p>
+  </div>
+
+  <p class="project-section-title">Key Achievements</p>
+  <div class="project-body">
+    <p>
+      • 타겟 검증 리서치 시간 87% 단축 (120분 → 5~20분)<br />
+      • 표준화 리포트 포맷으로 연구자간 품질 편차 제거<br />
+      • 설치 불필요 단일 exe로 전 연구자 즉시 배포
+    </p>
+  </div>
+
+
+</article>
+
+<footer>
+  <p>Jaehee Hur © 2026 · jaeheehur02@gmail.com</p>
+</footer>
+
+</body>
+</html>
+
+
+

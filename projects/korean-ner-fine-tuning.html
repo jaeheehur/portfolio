@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NER Fine-tuning for Korean Text — Jaehee Hur</title>
+  <link rel="stylesheet" href="../static/css/style.css" />
+  <link rel="stylesheet" href="../static/css/project-detail.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="../index.html">jh<span>.dev</span></a>
+  <div class="nav-links">
+    <a href="../career.html">Career</a>
+    <a href="../projects.html" class="active">Projects</a>
+  </div>
+</nav>
+
+<article class="project-detail">
+
+  <a class="project-back" href="../projects.html">← Back to Projects</a>
+
+  <div class="project-meta">
+    <span class="project-meta-label">NLP Project · 2023</span>
+  </div>
+
+  <h1>NER Fine-tuning for Korean Text</h1>
+
+  <p class="project-detail-desc">
+    한국어 도메인 특화 텍스트에서 인물, 조직, 날짜, 제품명 등 개체명을 자동 추출하는
+    NER 모델. KoBERT를 파인튜닝하고 직접 레이블링한 데이터셋으로 학습했습니다.
+  </p>
+
+  <div class="project-links-row">
+    <a class="btn btn-ghost" href="#" target="_blank">GitHub ↗</a>
+  </div>
+
+  <div class="project-hero-img">🏷️</div>
+
+  <div class="skills-section">
+    <p class="project-section-title">Skills & Technologies</p>
+    <div class="skills-grid">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">PyTorch</span>
+      <span class="skill-tag">HuggingFace Transformers</span>
+      <span class="skill-tag">KoBERT</span>
+      <span class="skill-tag">Label Studio</span>
+      <span class="skill-tag">seqeval</span>
+      <span class="skill-tag">Weights & Biases</span>
+    </div>
+  </div>
+
+  <div class="project-body">
+    <p class="project-section-title">Overview</p>
+    <div class="project-body">
+      <p>
+        뉴스 및 사내 보고서에서 주요 개체명을 자동 추출해 검색 인덱싱과 요약에 활용하기 위한 프로젝트입니다.
+        Label Studio로 약 3,000문장의 도메인 특화 데이터를 직접 레이블링하고,
+        KoBERT 기반 토큰 분류 모델을 파인튜닝했습니다.
+      </p>
+      <p>
+        Weights & Biases로 실험을 추적하고, seqeval로 엔티티 단위 F1 스코어를 평가했습니다.
+      </p>
+    </div>
+
+    <p class="project-section-title">Key Achievements</p>
+    <div class="project-body">
+      <p>
+        • 도메인 특화 NER F1 Score 0.87 달성<br />
+        • 6개 엔티티 유형(인물, 조직, 장소, 날짜, 제품, 기타) 인식<br />
+        • 추론 API 서버로 배포해 하위 파이프라인에서 활용
+      </p>
+    </div>
+  </div>
+
+</article>
+
+<footer>
+  <p>Built with ♥ · Jaehee Hur © 2026</p>
+</footer>
+
+</body>
+</html>
+
+
+

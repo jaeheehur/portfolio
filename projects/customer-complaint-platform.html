@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Customer Complaint Management Platform — Jaehee Hur</title>
+  <link rel="stylesheet" href="../static/css/style.css" />
+  <link rel="stylesheet" href="../static/css/project-detail.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="../index.html">jh<span>.dev</span></a>
+  <div class="nav-links">
+    <a href="../career.html">Career</a>
+    <a href="../projects.html" class="active">Projects</a>
+  </div>
+</nav>
+
+<article class="project-detail">
+
+  <a class="project-back" href="../projects.html">← Back to Projects</a>
+
+  <div class="project-meta">
+    <span class="project-meta-label">LG Chem AX Technology Development Team · Quality Division · Jun. – Dec. 2022</span>
+  </div>
+
+  <h1>고객불만 통합 관리 모니터링 플랫폼</h1>
+
+  <p class="project-detail-desc">
+    공장별로 분산 운영되던 고객불만 접수 체계를 통합하고, 비표준화된 자연어 데이터를
+    AI로 자동 분류하는 플랫폼. 전사 통합 분류 체계 수립부터 KPI 모니터링 대시보드까지
+    엔드투엔드로 구축했습니다.
+  </p>
+
+  <div class="skills-section">
+    <p class="project-section-title">Skills & Technologies</p>
+    <div class="skills-grid">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">NLP</span>
+      <span class="skill-tag">Text Classification</span>
+      <span class="skill-tag">Scikit-learn</span>
+      <span class="skill-tag">Plotly / Dash</span>
+      <span class="skill-tag">SQL</span>
+      <span class="skill-tag">Pandas</span>
+    </div>
+  </div>
+
+  <p class="project-section-title">Problem</p>
+  <div class="project-body">
+    <p>
+      각 공장별로 고객불만이 개별적으로 접수되어 용어와 분류 기준이 표준화되어 있지 않았습니다.
+      이로 인해 전사적으로 축적된 고객불만 데이터를 통합 분석하거나 트렌드를 파악하는 것이 불가능했고,
+      대응 우선순위 설정이나 재발 방지 전략 수립에 어려움이 있었습니다.
+    </p>
+    <p>
+      불만사항별 통합 관리가 되지 않아 유사 불만사항 발생 시 대응에 일관성이 결여되고,
+      담당자 개개인의 역량에 의존하여 human-error 발생 가능성이 증가했습니다.
+      사업장별 월간 리포트를 담당자가 직접 작성하면서 데이터 표준화 및 품질 관리에 한계점이 있었으며,
+      데이터 연계 분석 및 장기 트렌드 파악이 제한되어 제품 개선 및 고객 만족도 향상 기회가 저하되고 있었습니다.
+    </p>
+  </div>
+
+  <p class="project-section-title">Solution</p>
+  <div class="project-body">
+    <p>
+      <b>통합 분류 체계 수립:</b> 전 site에서 공통으로 활용할 수 있는 고객불만 분류 기준을 새로 정의하고,
+      기존 데이터의 소급 적용이 가능하도록 매핑 체계를 설계했습니다.
+    </p>
+    <p>
+      <b>NLP 기반 자동 분류:</b> NLTK 기반 자연어 전처리 및 머신러닝 분류 모델을 개발했습니다.
+      자연어로 입력된 고객불만 텍스트를 새로운 분류 체계에 따라 자동으로 분류하여
+      수동 분류 작업을 제거하고 분류 일관성을 확보합니다.
+    </p>
+    <p>
+      <b>KPI 모니터링 대시보드:</b> Plotly 및 Dash 기반 웹 대시보드로 고객불만 처리 단계별 리드타임, 단계별 처리 기간,
+      발생 빈도, 불만 유형 분포 등 주요 KPI를 시각화하여 전 site가 단일 플랫폼에서 통합 모니터링할 수 있도록 구성했습니다.
+    </p>
+  </div>
+
+  <p class="project-section-title">Key Achievements</p>
+  <div class="project-body">
+    <p>
+      • 분산된 공장별 고객불만 데이터를 전사 통합 플랫폼으로 일원화<br />
+      • 자연어 기반 고객불만 자동 분류로 수동 분류 작업 제거<br />
+      • 처리 단계별 리드타임 등 핵심 KPI 실시간 모니터링 환경 구축<br />
+      • 고객불만 리포트 작성 프로세스 자동화로 업무 공수 절감 및 품질 표준화
+    </p>
+  </div>
+
+
+</article>
+
+<footer>
+  <p>Jaehee Hur © 2026 · jaeheehur02@gmail.com</p>
+</footer>
+
+</body>
+</html>
+
+
+

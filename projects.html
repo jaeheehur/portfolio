@@ -1,0 +1,236 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — Jaehee Hur</title>
+  <link rel="stylesheet" href="static/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">jh<span>.dev</span></a>
+  <div class="nav-links">
+    <a href="career.html">Career</a>
+    <a href="projects.html" class="active">Projects</a>
+  </div>
+</nav>
+
+<section class="section" style="padding-top: 3.5rem;">
+  <div class="section-header">
+    <span class="section-title">Featured Projects</span>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="featured-grid">
+
+    <a class="featured-card" href="projects/competitor-intelligence-agent.html">
+      <div class="card-thumb">🕵️</div>
+      <div class="card-body">
+        <p class="card-label">Featured · LG Chem · 2026</p>
+        <h2 class="card-title">Competitor Technology Intelligence Agent</h2>
+        <p class="card-desc">
+          5-agent LangGraph 파이프라인으로 경쟁사 재무제표·특허·임상 데이터·뉴스를 자동 수집·분석하고
+          구조화된 인텔리전스 리포트를 생성합니다. 기존 2주 소요 수작업을 완전 자동화.
+        </p>
+        <div class="tag-list">
+          <span class="tag">LangGraph</span>
+          <span class="tag">LLM</span>
+          <span class="tag">Multi-Agent</span>
+          <span class="tag">Text2SQL</span>
+          <span class="tag">Python</span>
+          <span class="tag">RAG</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="featured-card" href="projects/hplc-audit-trail.html">
+      <div class="card-thumb">📋</div>
+      <div class="card-body">
+        <p class="card-label">Featured · LG Chem · 2025</p>
+        <h2 class="card-title">HPLC Audit Trail Monitoring Platform</h2>
+        <p class="card-desc">
+          연간 5만 건+ HPLC Audit Trail 데이터를 100% 자동 전수 점검하는 DI 모니터링 플랫폼.
+          시간 갭 분석으로 재처리 의심 케이스를 자동 탐지. 장비당 23h → 3h 점검 시간 단축.
+        </p>
+        <div class="tag-list">
+          <span class="tag">Plotly/Dash</span>
+          <span class="tag">LangChain</span>
+          <span class="tag">RAG</span>
+          <span class="tag">Ollama LLM</span>
+          <span class="tag">FAISS</span>
+          <span class="tag">GMP Compliance</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+
+  <div class="section-header">
+    <span class="section-title">Other Projects</span>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="other-grid">
+
+    <a class="other-card" href="projects/materials-discovery.html">
+      <div class="other-card-top">
+        <span class="other-card-icon">🔬</span>
+        <span class="icon-link">↗</span>
+      </div>
+      <h3 class="other-card-title">Materials Discovery Screening Platform</h3>
+      <p class="other-card-desc">특허·논문 자동 수집 + LLM 구조화 추출 + Text2SQL 챗봇으로 신소재 R&D 문헌 탐색 자동화.</p>
+      <div class="tag-list">
+        <span class="tag">LLM</span>
+        <span class="tag">Text2SQL</span>
+        <span class="tag">Web Crawling</span>
+        <span class="tag">Python</span>
+      </div>
+    </a>
+
+    <a class="other-card" href="projects/ivf-prediction.html">
+      <div class="other-card-top">
+        <span class="other-card-icon">🏥</span>
+        <span class="icon-link">↗</span>
+      </div>
+      <h3 class="other-card-title">IVF Live Birth Outcome Prediction</h3>
+      <p class="other-card-desc">HFEA 데이터셋 기반 IVF 생존 출생 예측 모델. LG Aimers 6회 해커톤(2,000+ 참가자) 기반 문제.</p>
+      <div class="tag-list">
+        <span class="tag">Python</span>
+        <span class="tag">Scikit-learn</span>
+        <span class="tag">Feature Engineering</span>
+      </div>
+    </a>
+
+    <a class="other-card" href="projects/cp-expense-audit.html">
+      <div class="other-card-top">
+        <span class="other-card-icon">💼</span>
+        <span class="icon-link">↗</span>
+      </div>
+      <h3 class="other-card-title">CP Expense Post-Audit Monitoring System</h3>
+      <p class="other-card-desc">MR 활동비 이상 패턴 탐지 시스템. 3,500+ 건/월 100% 자동 심사. OCE 플랫폼 배포 완료.</p>
+      <div class="tag-list">
+        <span class="tag">Python</span>
+        <span class="tag">Rule-based Detection</span>
+        <span class="tag">Kakao Maps API</span>
+        <span class="tag">Plotly/Dash</span>
+      </div>
+    </a>
+
+    <a class="other-card" href="projects/pharmacovigilance.html">
+      <div class="other-card-top">
+        <span class="other-card-icon">💊</span>
+        <span class="icon-link">↗</span>
+      </div>
+      <h3 class="other-card-title">Pharmacovigilance Literature Monitoring</h3>
+      <p class="other-card-desc">PubMed 기반 부작용 문헌 자동 감시. 4-모델 NER 앙상블, MedDRA 98% 커버리지.</p>
+      <div class="tag-list">
+        <span class="tag">NER</span>
+        <span class="tag">BioBERT</span>
+        <span class="tag">scispaCy</span>
+        <span class="tag">Streamlit</span>
+      </div>
+    </a>
+
+    <a class="other-card" href="projects/splicing-prediction.html">
+      <div class="other-card-top">
+        <span class="other-card-icon">🧬</span>
+        <span class="icon-link">↗</span>
+      </div>
+      <h3 class="other-card-title">Splicing Site Prediction AI Platform</h3>
+      <p class="other-card-desc">신약 개발 초기 단계 Splicing 변이 조기 식별 AI 플랫폼. 후보 물질 선별 리스크를 사전에 감지.</p>
+      <div class="tag-list">
+        <span class="tag">Deep Learning</span>
+        <span class="tag">PyTorch</span>
+        <span class="tag">Bioinformatics</span>
+        <span class="tag">Python</span>
+      </div>
+    </a>
+
+    <a class="other-card" href="projects/reagent-usage-prediction.html">
+      <div class="other-card-top">
+        <span class="other-card-icon">🧪</span>
+        <span class="icon-link">↗</span>
+      </div>
+      <h3 class="other-card-title">Reagent Usage Prediction AI &amp; Inventory Dashboard</h3>
+      <p class="other-card-desc">~800종 시약의 3개월 선행 사용량 예측. K-means 클러스터링 + 앙상블 ML로 연간 폐기 비용 ~7% 절감. 3개 플랜트 확대 적용.</p>
+      <div class="tag-list">
+        <span class="tag">PySpark</span>
+        <span class="tag">LightGBM</span>
+        <span class="tag">K-means</span>
+        <span class="tag">Plotly/Dash</span>
+      </div>
+    </a>
+
+    <a class="other-card" href="projects/macroeconomic-forecasting.html">
+      <div class="other-card-top">
+        <span class="other-card-icon">📈</span>
+        <span class="icon-link">↗</span>
+      </div>
+      <h3 class="other-card-title">Macroeconomic Price Forecasting Platform</h3>
+      <p class="other-card-desc">CEIC 거시경제 지표 15년 시계열. SARIMA/Prophet 앙상블 + SLSQP 가격 최적화. 사내 Best Practice 수상.</p>
+      <div class="tag-list">
+        <span class="tag">Prophet</span>
+        <span class="tag">SARIMA</span>
+        <span class="tag">Time Series</span>
+        <span class="tag">SciPy</span>
+      </div>
+    </a>
+
+    <a class="other-card" href="projects/targetwiki.html">
+      <div class="other-card-top">
+        <span class="other-card-icon">🎯</span>
+        <span class="icon-link">↗</span>
+      </div>
+      <h3 class="other-card-title">TargetWiki: Target Validation Auto-Report</h3>
+      <p class="other-card-desc">10+ 외부 DB 크롤링 → python-pptx 자동 보고서 생성. 리서치 시간 87% 단축 (120분 → 5~20분).</p>
+      <div class="tag-list">
+        <span class="tag">Selenium</span>
+        <span class="tag">BeautifulSoup</span>
+        <span class="tag">python-pptx</span>
+        <span class="tag">PyInstaller</span>
+      </div>
+    </a>
+
+    <a class="other-card" href="projects/customer-complaint-platform.html">
+      <div class="other-card-top">
+        <span class="other-card-icon">📋</span>
+        <span class="icon-link">↗</span>
+      </div>
+      <h3 class="other-card-title">고객불만 통합 관리 모니터링 플랫폼</h3>
+      <p class="other-card-desc">공장별 분산 고객불만 데이터를 전사 통합. AI 자동 분류 + KPI 대시보드로 수동 분류 작업 제거.</p>
+      <div class="tag-list">
+        <span class="tag">NLP</span>
+        <span class="tag">Text Classification</span>
+        <span class="tag">Plotly/Dash</span>
+        <span class="tag">Python</span>
+      </div>
+    </a>
+
+    <a class="other-card" href="projects/tympanic-membrane.html">
+      <div class="other-card-top">
+        <span class="other-card-icon">👂</span>
+        <span class="icon-link">↗</span>
+      </div>
+      <h3 class="other-card-title">Tympanic Membrane Classification</h3>
+      <p class="other-card-desc">고막 내시경 이미지 다중 분류. VGG16/ResNet/DenseNet/EfficientNet 앙상블, 95.8% 정확도. PLOS ONE 게재.</p>
+      <div class="tag-list">
+        <span class="tag">PyTorch</span>
+        <span class="tag">EfficientNet</span>
+        <span class="tag">Grad-CAM</span>
+        <span class="tag">Ensemble</span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<footer>
+  <p>Jaehee Hur © 2026 · jaeheehur02@gmail.com</p>
+</footer>
+
+</body>
+</html>
+

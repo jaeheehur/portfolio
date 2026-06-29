@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ETL Pipeline Automation — Jaehee Hur</title>
+  <link rel="stylesheet" href="../static/css/style.css" />
+  <link rel="stylesheet" href="../static/css/project-detail.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="../index.html">jh<span>.dev</span></a>
+  <div class="nav-links">
+    <a href="../career.html">Career</a>
+    <a href="../projects.html" class="active">Projects</a>
+  </div>
+</nav>
+
+<article class="project-detail">
+
+  <a class="project-back" href="../projects.html">← Back to Projects</a>
+
+  <div class="project-meta">
+    <span class="project-meta-label">Data Engineering · 2023</span>
+  </div>
+
+  <h1>ETL Pipeline Automation</h1>
+
+  <p class="project-detail-desc">
+    REST API, DB, 파일 등 다양한 소스에서 데이터를 수집·변환·적재하는 ETL 파이프라인을
+    Airflow로 자동화한 프로젝트. 스케줄링, 재시도, 알림까지 포함한 프로덕션급 구성을 갖췄습니다.
+  </p>
+
+  <div class="project-links-row">
+    <a class="btn btn-ghost" href="#" target="_blank">GitHub ↗</a>
+  </div>
+
+  <div class="project-hero-img">⚙️</div>
+
+  <div class="skills-section">
+    <p class="project-section-title">Skills & Technologies</p>
+    <div class="skills-grid">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">Apache Airflow</span>
+      <span class="skill-tag">PostgreSQL</span>
+      <span class="skill-tag">Docker</span>
+      <span class="skill-tag">Pandas</span>
+      <span class="skill-tag">SQLAlchemy</span>
+      <span class="skill-tag">Slack API</span>
+    </div>
+  </div>
+
+  <div class="project-body">
+    <p class="project-section-title">Overview</p>
+    <div class="project-body">
+      <p>
+        매일 수십 개의 데이터 소스(내부 DB, 외부 API, S3 파일 등)에서 데이터를 가져와
+        정제·집계한 뒤 분석용 DW에 적재하는 파이프라인을 Airflow DAG으로 구성했습니다.
+      </p>
+      <p>
+        각 태스크에 재시도 정책과 SLA를 설정하고, 실패 시 Slack으로 즉시 알림이 오도록 연동해
+        데이터 신뢰성을 높였습니다.
+      </p>
+    </div>
+
+    <p class="project-section-title">Key Achievements</p>
+    <div class="project-body">
+      <p>
+        • 30개 이상의 데이터 소스 통합<br />
+        • 파이프라인 평균 성공률 99.2% 달성<br />
+        • 데이터 지연 알림으로 SLA 위반 사전 감지<br />
+        • Docker Compose 기반으로 환경 재현성 확보
+      </p>
+    </div>
+  </div>
+
+</article>
+
+<footer>
+  <p>Built with ♥ · Jaehee Hur © 2026</p>
+</footer>
+
+</body>
+</html>
+
+
+

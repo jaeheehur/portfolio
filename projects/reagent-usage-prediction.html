@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reagent Usage Prediction AI — Jaehee Hur</title>
+  <link rel="stylesheet" href="../static/css/style.css" />
+  <link rel="stylesheet" href="../static/css/project-detail.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="../index.html">jh<span>.dev</span></a>
+  <div class="nav-links">
+    <a href="../career.html">Career</a>
+    <a href="../projects.html" class="active">Projects</a>
+  </div>
+</nav>
+
+<article class="project-detail">
+
+  <a class="project-back" href="../projects.html">← Back to Projects</a>
+
+  <div class="project-meta">
+    <span class="project-meta-label">Featured · LG Chem AX Technology Development Team · Sep. 2023 – Oct. 2024</span>
+  </div>
+
+  <h1>Reagent Usage Prediction AI &amp; Inventory Management Dashboard</h1>
+
+  <p class="project-detail-desc">
+    ~800종 시약의 3개월 선행 사용량을 예측하는 앙상블 ML 시스템. K-means 클러스터링으로 시약을
+    사용 패턴별로 그룹화하고 클러스터별 최적 모델을 학습해 연간 시약 폐기 비용 ~7% 절감.
+    Quality Division 우수 AX Practice 선정, 오송 파일럿에서 3개 플랜트로 확대 적용.
+  </p>
+
+  <div class="skills-section">
+    <p class="project-section-title">Skills & Technologies</p>
+    <div class="skills-grid">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">PySpark</span>
+      <span class="skill-tag">Dataiku</span>
+      <span class="skill-tag">Scikit-learn</span>
+      <span class="skill-tag">LightGBM</span>
+      <span class="skill-tag">CatBoost</span>
+      <span class="skill-tag">K-means Clustering</span>
+      <span class="skill-tag">Random Forest</span>
+      <span class="skill-tag">Ridge / Lasso</span>
+      <span class="skill-tag">KNN</span>
+      <span class="skill-tag">Plotly / Dash</span>
+      <span class="skill-tag">SQL</span>
+      <span class="skill-tag">Pandas</span>
+    </div>
+  </div>
+
+  <p class="project-section-title">Problem</p>
+  <div class="project-body">
+    <p>
+      품질 부서에서 시험을 위해 약 800종의 다양한 시약을 사용하고 있었으나, 기존 시스템으로는 시약 종류별 잔여량을 통합적으로 확인할 수 없어
+      사용량 및 재고 관리에 심각한 한계가 있었습니다.
+    </p>
+    <p>
+      시약 잔여량이 통합적으로 확인되지 않으면서 시험자들이 모르는 사이에 유효기간이 만료되는 시약이 지속적으로 발생하여 월별 폐기 비용이 증가했습니다.
+      반면 해외 발주 시약의 경우 긴급 시험 대응이 어려워 제품 출하량 차질로 인한 매출 손실 위험도 발생했습니다.
+      더욱이 1천여 종의 시약별 로트 재고를 수작업으로 관리하는 데에는 근본적인 한계가 있었기에, 이를 DX 관점에서 체계적으로 해결할 필요성이 대두되었습니다.
+    </p>
+  </div>
+
+  <p class="project-section-title">Solution</p>
+  <div class="project-body">
+    <p>
+      <b>데이터 파이프라인 구축:</b> PySpark와 SQL 쿼리를 이용한 3개 플랜트의 시약 구매 및 사용 이력 데이터 대규모 조회 및 Dataiku 기반 ETL 파이프라인 구축.
+    </p>
+    <p>
+      <b>예측 모델 개발:</b> K-means 클러스터링으로 시약을 사용 패턴(정기형, 불규칙형, 계절형 등)에 따라 그룹화하고,
+      클러스터별로 KNN, Ridge, Lasso, Random Forest, LightGBM, CatBoost 앙상블 모델을 학습해
+      각 시약 유형에 최적화된 3개월 선행 예측값을 제공합니다.
+    </p>
+    <p>
+      <b>통합 대시보드:</b> 제품별/시험별 사용 시약에 대한 종류별 재고 확인 및 구매 이력 점검이 가능한 Plotly/Dash 대시보드 개발.
+      주요 시약 유효기간 만료 시 담당자에게 자동으로 구매 알림을 제공하는 시스템 구축.
+    </p>
+  </div>
+
+  <p class="project-section-title">Dashboard Features</p>
+  <div class="project-body">
+    <p>
+      예측 모델과 함께 Plotly/Dash 기반 인벤토리 모니터링 대시보드를 구축했습니다.
+      제품별/시험별 사용 시약의 종류별 재고 확인 및 구매 이력 점검이 가능하며,
+      예측 사용량 대비 현재 재고 수준을 시각화합니다.
+      유효기간 만료가 임박한 시약에 대해 담당자에게 구매 알림을 자동 발송하는 기능으로
+      폐기 직전 시약의 조기 소진을 유도합니다.
+    </p>
+  </div>
+
+  <p class="project-section-title">Key Achievements</p>
+  <div class="project-body">
+    <p>
+      • 연간 시약 폐기 비용 ~7% (총 조달 예산 대비) 절감<br />
+      • Quality Division 우수 AX Practice 선정<br />
+      • 오송 파일럿 플랜트 → 3개 플랜트 전체 확대 적용<br />
+      • 유효기간 임박 시약 자동 알림으로 폐기 전 소진 유도<br />
+      • 해외 발주 시약 Shortage 관리를 통한 제품 출하량 손실 위험 예방
+    </p>
+  </div>
+
+
+</article>
+
+<footer>
+  <p>Jaehee Hur © 2026 · jaeheehur02@gmail.com</p>
+</footer>
+
+</body>
+</html>
+
+
+

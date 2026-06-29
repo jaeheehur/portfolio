@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Macroeconomic Price Forecasting Platform — Jaehee Hur</title>
+  <link rel="stylesheet" href="../static/css/style.css" />
+  <link rel="stylesheet" href="../static/css/project-detail.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="../index.html">jh<span>.dev</span></a>
+  <div class="nav-links">
+    <a href="../career.html">Career</a>
+    <a href="../projects.html" class="active">Projects</a>
+  </div>
+</nav>
+
+<article class="project-detail">
+
+  <a class="project-back" href="../projects.html">← Back to Projects</a>
+
+  <div class="project-meta">
+    <span class="project-meta-label">LG Chem AX Technology Development Team · May – Dec. 2023 · Company-wide AX Best Practice Award</span>
+  </div>
+
+  <h1>Macroeconomic Price Forecasting &amp; Scenario Optimization Platform</h1>
+
+  <p class="project-detail-desc">
+    CEIC 글로벌 거시경제 지표와 내부 데이터를 통합한 15년 시계열 DB를 구축하고,
+    SARIMA·HoltWinters·Prophet 앙상블 + SLSQP 기반 가격 최적화로 경험 기반 가격 협상을 데이터 기반으로 전환.
+    사내 AX Best Practice 수상.
+  </p>
+
+  <div class="skills-section">
+    <p class="project-section-title">Skills & Technologies</p>
+    <div class="skills-grid">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">Prophet</span>
+      <span class="skill-tag">SARIMA</span>
+      <span class="skill-tag">HoltWinters</span>
+      <span class="skill-tag">Time Series Forecasting</span>
+      <span class="skill-tag">SciPy (SLSQP)</span>
+      <span class="skill-tag">Huber Regression</span>
+      <span class="skill-tag">Feature Engineering</span>
+      <span class="skill-tag">CEIC API</span>
+      <span class="skill-tag">Pandas</span>
+    </div>
+  </div>
+
+  <p class="project-section-title">Overview</p>
+  <div class="project-body">
+    <p>
+      원유 가격, 사료 가격, 환율 등 거시경제 지표를 CEIC에서 수집해 내부 데이터와 통합한
+      15년 시계열 DB를 구축했습니다. SARIMA / HoltWinters / Prophet을 변수별로 자동 백테스팅
+      (3/5/8년 윈도우)해 최적 모델을 선택합니다.
+    </p>
+    <p>
+      원유 가격 예측에는 Huber Regression + Prophet + YoY Extrapolation 앙상블과
+      지연·계절성·COVID 더미 변수를 활용한 특성 엔지니어링을 적용하고,
+      Milk-Feed Price Ratio를 축산 농가 구매력 프록시로 도출했습니다.
+      SLSQP 기반 시나리오 최적화로 비용·마진·파트너 가격 등 다중 제약 하에서
+      최적 가격안을 제시합니다.
+    </p>
+  </div>
+
+  <p class="project-section-title">Key Achievements</p>
+  <div class="project-body">
+    <p>
+      • 연간 수동 데이터 수집 업무 ~250시간 절감<br />
+      • 경험 기반 가격 협상 → 데이터 기반 의사결정 전환<br />
+      • 사내 AX Best Practice 수상
+    </p>
+  </div>
+
+</article>
+
+<footer>
+  <p>Jaehee Hur © 2026 · jaeheehur02@gmail.com</p>
+</footer>
+
+</body>
+</html>
+
+
+

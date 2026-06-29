@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marketing Analytics Dashboard — Jaehee Hur</title>
+  <link rel="stylesheet" href="../static/css/style.css" />
+  <link rel="stylesheet" href="../static/css/project-detail.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="../index.html">jh<span>.dev</span></a>
+  <div class="nav-links">
+    <a href="../career.html">Career</a>
+    <a href="../projects.html" class="active">Projects</a>
+  </div>
+</nav>
+
+<article class="project-detail">
+
+  <a class="project-back" href="../projects.html">← Back to Projects</a>
+
+  <div class="project-meta">
+    <span class="project-meta-label">Featured Project · 2024</span>
+  </div>
+
+  <h1>Marketing Analytics Dashboard</h1>
+
+  <p class="project-detail-desc">
+    Google Ads, Meta, Kakao 등 다양한 광고 채널의 성과 데이터를 자동 수집하고,
+    BigQuery에 적재한 뒤 Looker Studio로 실시간 시각화하는 엔드투엔드 데이터 파이프라인 프로젝트입니다.
+    마케터가 직접 데이터를 조회하고 인사이트를 도출할 수 있도록 셀프서비스 환경을 구축했습니다.
+  </p>
+
+  <div class="project-links-row">
+    <a class="btn btn-ghost" href="#" target="_blank">GitHub ↗</a>
+  </div>
+
+  <div class="project-hero-img">📊</div>
+
+  <div class="skills-section">
+    <p class="project-section-title">Skills & Technologies</p>
+    <div class="skills-grid">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">Apache Airflow</span>
+      <span class="skill-tag">BigQuery</span>
+      <span class="skill-tag">dbt</span>
+      <span class="skill-tag">Looker Studio</span>
+      <span class="skill-tag">Google Ads API</span>
+      <span class="skill-tag">Meta Marketing API</span>
+      <span class="skill-tag">GCP</span>
+    </div>
+  </div>
+
+  <div class="project-body">
+    <p class="project-section-title">Background</p>
+    <div class="project-body">
+      <p>
+        마케팅 팀이 매일 아침 수동으로 각 광고 플랫폼에 접속해 데이터를 엑셀로 정리하는 데
+        1~2시간을 소비하고 있었습니다. 채널 간 성과 비교도 어려워 의사결정이 지연되는 문제가 있었습니다.
+      </p>
+      <p>
+        Airflow를 활용해 매일 새벽 자동으로 각 채널 API를 호출하고 BigQuery에 적재,
+        dbt로 변환·집계한 뒤 Looker Studio 대시보드에서 채널별/기간별 성과를 한눈에 볼 수 있도록 구성했습니다.
+      </p>
+    </div>
+
+    <p class="project-section-title">Key Achievements</p>
+    <div class="project-body">
+      <p>
+        • 일일 수동 리포팅 작업 완전 자동화 (절감 시간: 약 1.5시간/일)<br />
+        • 6개 광고 채널 통합 대시보드 구현<br />
+        • ROAS, CPA, CTR 등 핵심 KPI 실시간 모니터링<br />
+        • 이상값 감지 알림(Slack 연동) 기능 추가
+      </p>
+    </div>
+  </div>
+
+</article>
+
+<footer>
+  <p>Built with ♥ · Jaehee Hur © 2026</p>
+</footer>
+
+</body>
+</html>
+
+
+
