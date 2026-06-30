@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Competitor Technology Intelligence Agent — Jaehee Hur</title>
+  <title>Company R&D Portfolio Intelligence Agent  — Jaehee Hur</title>
   <link rel="stylesheet" href="../static/css/style.css" />
   <link rel="stylesheet" href="../static/css/project-detail.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -27,12 +27,12 @@
     <span class="project-meta-label">Featured · LG Chem AX Technology Development Team · Apr. 2026 – Present</span>
   </div>
 
-  <h1>Competitor Technology Intelligence Agent</h1>
+  <h1>Company R&D Portfolio Intelligence Agent</h1>
 
   <p class="project-detail-desc">
-    제약사 경쟁사 분석을 자동화하는 멀티 에이전트 LangGraph 파이프라인. 재무제표·특허·뉴스 데이터를
-    멀티소스로 통합해 구조화된 인텔리전스 리포트를 자동 생성합니다.
-    기존 2주 이상 소요되던 수작업 분석을 완전 자동화, 2026년 6월 전사 배포 예정.
+    타겟 기업의 기술 포트폴리오 분석을 수행하는 멀티 에이전트 LangGraph 파이프라인. 
+    재무제표·특허·뉴스 데이터를 통합하여 구조화된 인텔리전스 리포트를 자동으로 생성합니다. (소요 시간: 10분 이내)
+    전사 배포 후 첫 달 800건 이상의 리포트가 생성되었으며, 일평균 20-30건의 리포트를 꾸준히 배포하고 있습니다.
   </p>
 
   <div class="skills-section">
@@ -54,9 +54,9 @@
   <p class="project-section-title">Background</p>
   <div class="project-body">
     <p>
-      R&D 전략팀이 경쟁사 분석 리포트 한 건을 작성하는 데 2주 이상이 소요됐습니다.
-      재무 데이터, 특허 동향, 뉴스 등 분산된 소스를 수동으로 수집·정리하는 과정이 병목이었고,
-      담당자마다 분석 수준의 편차도 컸습니다.
+      수작업으로 기업 R&D 포트폴리오 리서치를 수행하고 완성된 리포트를 작성하기까지 건당 약 2주 이상이 소요되었습니다.
+      담당자마다 분석 수준의 편차 및 human-error가 발생할 수 있었고, 분산된 여러 소스를 수동으로 수집·정리하는 과정에서
+      비효율이 발생하여 업무 효율화를 위해 에이전트를 기획 개발하게 되었습니다.
     </p>
   </div>
 
@@ -159,7 +159,7 @@
             </div>
             <div class="agent-cell">
               <div class="agent-cell-name">🔬 IP Agent</div>
-              <div class="agent-cell-desc">Patent DB Text2SQL → Top 20 추출, TRL 추정</div>
+              <div class="agent-cell-desc">Patent DB 다국어/출원인/CPC 등 매칭 → Top 50 추출, TRL 추정</div>
               <span class="llm-chip">LLM — 쿼리 생성 · TRL</span>
             </div>
             <div class="agent-cell">
@@ -184,7 +184,7 @@
         <div class="pipe-detail">
           <b>품질 검토 → 구조화 리포트 자동 생성</b><br />
           수집 데이터의 <em>관련성·신뢰도·중복을 자동 필터링</em>한 뒤
-          계층적 HTML 인텔리전스 리포트를 생성합니다.
+          기업 포트폴리오 분석 리포트를 생성합니다.
           <div class="report-chapters">
             <div class="report-ch">
               <div class="report-ch-num">Ch. 1</div>
@@ -218,7 +218,7 @@
         <div class="pipe-detail">
           <b>Chapter별 인사이트 요약 및 최종 리포트 병합</b><br />
           각 Chapter(기업 개요, 산업 동향, 기술 평가)의 핵심 인사이트를 <em>추상화하여 Executive Summary로 생성</em>하고,
-          모든 챕터를 통합해 완성된 종합 인텔리전스 리포트를 제공합니다.
+          모든 챕터를 통합해 완성된 시각화 리포트를 제공합니다.
         </div>
       </div>
 
@@ -379,10 +379,10 @@
 
     <p class="ocn-subheading">LangGraph 선정 이유</p>
     <div class="project-body ocn-body">
-      <p>선형 체인(LCEL)으로 구현했을 때와 비교해 세 가지 문제가 구조적으로 해소됩니다.</p>
+      <p>체인으로 구현했을 경우와 비교해 3가지 이점이 존재함</p>
 
-      <p><b>① 정확성 — 호출부 실수로 틀린 값이 조용히 전파되는 문제</b><br />
-      선형 체인에서는 호출부가 <code>ch1</code>, <code>feedback</code>, <code>retries</code>를 변수로 들고 다니며 직접 인자로 넣어줘야 합니다. 재시도 분기를 빠뜨리거나 실수로 이전 값을 넘기면 <b>LLM은 오류 없이 실행되지만 틀린 컨텍스트로 챕터를 생성</b>합니다. 이런 버그는 출력 텍스트를 읽기 전까지 감지되지 않습니다.</p>
+      <p><b>① 정확성 — 호출부에서 잘못된 값이 전파되는 문제</b><br />
+      체인에서는 호출부가 <code>ch1</code>, <code>feedback</code>, <code>retries</code>를 변수로 들고 다니며 직접 인자로 넣어줘야 함. 재시도 분기를 빠뜨리거나 실수로 이전 값을 넘기면 <b>LLM은 오류 없이 실행되지만 틀린 컨텍스트로 챕터를 생성</b>하게 됨. 이런 버그는 출력 텍스트를 읽기 전까지 감지되지 못함.</p>
       <div class="ocn-code">
         <span style="color:#94a3b8;"># 선형 체인 — ch2 재시도 중 ch1 최신값을 호출부가 보장해야 함</span><br />
         ch1 = generate_ch1(company)<br />
@@ -395,13 +395,13 @@
         &nbsp;&nbsp;&nbsp;&nbsp;ch2 = generate_ch2(company, ch1, feedback=feedback2)</b><br />
         ch3 = generate_ch3(ch1, ch2, patents) &nbsp;<span style="color:#94a3b8;"># 둘 다 최신인지 호출부가 보장</span>
       </div>
-      <p>LangGraph에서는 <code>state["ch1"]</code>이 항상 마지막으로 쓰인 값입니다. 노드는 상태에서 꺼내 쓸 뿐이고, 어떤 노드도 다른 노드의 필드를 실수로 덮어쓸 수 없습니다.</p>
+      <p>LangGraph에서는 <code>state["ch1"]</code>이 항상 마지막으로 쓰인 값이기 때문에 잘못된 값이 전달될 확률이 낮아짐.</p>
 
       <p><b>② 확장성 — 필드 추가 시 모든 호출 지점을 수정해야 하는 문제</b><br />
-      챕터가 늘면 선형 체인의 호출부에 <code>chX, chX_ok, chX_feedback, chX_retries</code>가 챕터 수만큼 쌓이고, 필드 하나가 추가될 때마다 그 값을 받아서 넘기는 <b>모든 호출 지점을 찾아 수정</b>해야 합니다. LangGraph는 <code>AnalysisState</code> 스키마에 필드 하나를 추가하면 끝입니다. 이후 어느 노드든 <code>state["new_field"]</code>로 꺼내면 되고, 다른 노드는 건드리지 않아도 됩니다.</p>
+      챕터가 늘어날 수록 체인의 호출부에 <code>chX, chX_ok, chX_feedback, chX_retries</code>가 챕터 수만큼 쌓이고, 필드 하나가 추가될 때마다 그 값을 받아서 넘기는 <b>모든 호출 지점을 찾아 수정</b>해야 함. LangGraph는 확장성에 있어서 용이함.</p>
 
       <p><b>③ 관찰 가능성 — 중간 상태 스냅샷이 없는 문제</b><br />
-      선형 체인에서 실패하면 지역 변수는 마지막 값으로 덮어씌워지거나 사라집니다. "ch1이 재시도됐는지, 피드백이 뭐였는지"를 사후에 알 수 없습니다. LangGraph는 실패 시점의 <code>AnalysisState</code> 전체가 구조화된 객체로 남습니다.</p>
+      선형 체인에서 실패하면 지역 변수는 마지막 값으로 덮어씌워지거나 사라짐. "ch1이 재시도됐는지, 피드백이 뭐였는지"를 사후에 알 수 없음. LangGraph는 실패 시점의 <code>AnalysisState</code> 전체가 구조화된 객체로 남아 디버깅이 용이함.</p>
       <div class="ocn-code">
         <span style="color:#94a3b8;"># 실패 시점 상태 덤프 — 어느 노드에서 왜 멈췄는지 한눈에 파악</span><br />
         {<br />
@@ -410,9 +410,6 @@
         &nbsp;&nbsp;"ch2": "", &nbsp;<span style="color:#94a3b8;"># 아직 생성 안 됨</span><br />
         }
       </div>
-      <p>모든 노드 경계에서 <code>log_callback</code>(단계 로그)과 <code>check_cancel</code>(중단 지점)이 호출되는 것도 이 구조 덕분입니다.</p>
-
-      <p>각 노드는 인자를 직접 주고받지 않고 <b>공유 상태 객체 <code>AnalysisState</code></b>를 읽고 부분 갱신하며 통신합니다. 예: <code>review_*</code> 노드가 <code>chX_ok</code>(통과 여부)·<code>chX_feedback</code>을 써넣으면 라우터가 그 값을 읽어 다음 노드를 결정합니다. 검토 실패 시 <b>재생성 ≤ MAX_RETRIES</b>로 동일 챕터를 다시 만듭니다.</p>
     </div>
 
     <div class="ocn-legend">
@@ -610,7 +607,7 @@
       실제 앱의 화면 전환 흐름(입력 → 기업 확정 → 분석 진행 로그 → 리포트)을 인터랙티브 목업으로 확인할 수 있습니다.
     </p>
     <p>
-      <a class="demo-link" href="https://jaeheehur.github.io/competitor-intelligence-agent/mockup.html" target="_blank" rel="noopener">
+      <a class="demo-link" href="https://jaeheehur.github.io/company-rnd-portfolio-intelligence-agent/mockup.html" target="_blank" rel="noopener">
         ▶ Live Demo 열기 (mockup.html)
       </a>
     </p>
@@ -710,7 +707,7 @@
   <p class="project-section-title">Key Achievements</p>
   <div class="project-body">
     <p>
-      • 리포트 작성 소요 기간: 2주+ → 완전 자동화 (수분 내 초안 생성)<br />
+      • 리포트 작성 소요 기간: 2주+ → 완전 자동화 (10분 이내 초안 생성)<br />
       • 멀티소스 인텔리전스 통합 자동화 (재무·특허·뉴스)<br />
       • 전사 배포 완료
     </p>
