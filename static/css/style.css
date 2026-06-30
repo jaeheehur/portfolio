@@ -308,9 +308,16 @@ nav {
 
 /* ── PROJECT DETAIL PAGE ── */
 .project-detail {
-  max-width: 760px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 4rem 2rem 6rem;
+  padding: 4rem 2.5rem 6rem;
+}
+
+/* 본문 텍스트 가독 폭은 유지하되, 다이어그램·표 등 와이드 요소는 전체 폭 사용 */
+.project-detail > p,
+.project-detail > .project-body,
+.project-detail > .skills-section {
+  max-width: 760px;
 }
 
 .project-back {
