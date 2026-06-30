@@ -423,7 +423,7 @@
     </div>
 
     <div class="ocn-scroll">
-      <svg viewBox="0 0 880 450" width="100%" style="display:block; width:100%; height:auto;" xmlns="http://www.w3.org/2000/svg" font-family="'Noto Sans KR', system-ui, sans-serif">
+      <svg viewBox="0 0 880 450" width="100%" style="display:block; width:100%; max-width:780px; height:auto; margin:0 auto;" xmlns="http://www.w3.org/2000/svg" font-family="'Noto Sans KR', system-ui, sans-serif">
         <defs>
           <marker id="ocn-ar" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto" markerUnits="userSpaceOnUse">
             <path d="M0,0 L6,3 L0,6 Z" fill="#64748b"/>
@@ -476,17 +476,17 @@
         <line x1="520" y1="137" x2="680" y2="137" stroke="#64748b" stroke-width="1.5" marker-end="url(#ocn-ar)"/>
         <text x="600" y="129" text-anchor="middle" font-size="9" font-weight="600" fill="#16a34a">PASS</text>
 
-        <!-- wrap down: g2 → r2 (col3) -->
-        <line x1="768" y1="164" x2="768" y2="250" stroke="#64748b" stroke-width="1.5" marker-end="url(#ocn-ar)"/>
+        <!-- wrap down: g2 → r2 (col3, normal flow — offset left) -->
+        <line x1="748" y1="164" x2="748" y2="250" stroke="#64748b" stroke-width="1.5" marker-end="url(#ocn-ar)"/>
 
-        <!-- Row 2 flow: r2 → g3 → r3 (right→left) -->
-        <line x1="680" y1="277" x2="600" y2="277" stroke="#64748b" stroke-width="1.5" marker-end="url(#ocn-ar)"/>
-        <line x1="360" y1="277" x2="280" y2="277" stroke="#64748b" stroke-width="1.5" marker-end="url(#ocn-ar)"/>
-        <text x="640" y="269" text-anchor="middle" font-size="9" font-weight="600" fill="#16a34a">PASS</text>
+        <!-- Row 2 flow: r2 → g3 → r3 (right→left, edges touching) -->
+        <line x1="680" y1="277" x2="520" y2="277" stroke="#64748b" stroke-width="1.5" marker-end="url(#ocn-ar)"/>
+        <line x1="360" y1="277" x2="200" y2="277" stroke="#64748b" stroke-width="1.5" marker-end="url(#ocn-ar)"/>
+        <text x="600" y="269" text-anchor="middle" font-size="9" font-weight="600" fill="#16a34a">PASS</text>
 
-        <!-- wrap down: r3 → exec_summary (col1) -->
-        <line x1="120" y1="304" x2="120" y2="370" stroke="#64748b" stroke-width="1.5" marker-end="url(#ocn-ar)"/>
-        <text x="135" y="343" text-anchor="start" font-size="9" font-weight="600" fill="#16a34a">PASS</text>
+        <!-- wrap down: r3 → exec_summary (col1, normal flow — offset left) -->
+        <line x1="108" y1="304" x2="108" y2="370" stroke="#64748b" stroke-width="1.5" marker-end="url(#ocn-ar)"/>
+        <text x="104" y="343" text-anchor="end" font-size="9" font-weight="600" fill="#16a34a">PASS</text>
 
         <!-- Row 3 flow: exec → build → END (left→right) -->
         <line x1="200" y1="397" x2="360" y2="397" stroke="#64748b" stroke-width="1.5" marker-end="url(#ocn-ar)"/>
@@ -496,9 +496,9 @@
         <!-- r1 → g1 (below row 1) -->
         <polyline points="440,164 440,206 120,206 120,164" fill="none" stroke="#ef4444" stroke-width="1.4" marker-end="url(#ocn-arR)"/>
         <text x="280" y="224" text-anchor="middle" font-size="8.5" fill="#ef4444">FAIL ↻ 재생성 (≤ MAX_RETRIES)</text>
-        <!-- r2 → g2 (col3 side loop, bulge left) -->
-        <polyline points="752,250 706,250 706,164 750,164" fill="none" stroke="#ef4444" stroke-width="1.4" marker-end="url(#ocn-arR)"/>
-        <text x="700" y="205" text-anchor="end" font-size="8.5" fill="#ef4444">FAIL ↻ 재생성</text>
+        <!-- r2 → g2 (col3, parallel up-arrow touching both nodes) -->
+        <line x1="772" y1="250" x2="772" y2="164" stroke="#ef4444" stroke-width="1.4" marker-end="url(#ocn-arR)"/>
+        <text x="788" y="210" text-anchor="start" font-size="8.5" fill="#ef4444">FAIL ↻ 재생성</text>
         <!-- r3 → g3 (below row 2) -->
         <polyline points="132,304 132,344 440,344 440,304" fill="none" stroke="#ef4444" stroke-width="1.4" marker-end="url(#ocn-arR)"/>
         <text x="286" y="362" text-anchor="middle" font-size="8.5" fill="#ef4444">FAIL ↻ 재생성 (≤ MAX_RETRIES)</text>
@@ -605,7 +605,19 @@
   <p class="project-section-title">Live Demo</p>
 
   <style>
-    .demo-wrap { margin: 0.4rem 0 2rem; font-family: var(--font-sans, system-ui, sans-serif); }
+    /* 라이브 데모를 실제 앱 창처럼 보여주는 뷰포트 (고정 높이 + 내부 스크롤) */
+    .demo-wrap {
+      margin: 0.4rem auto 2rem;
+      font-family: var(--font-sans, system-ui, sans-serif);
+      max-width: 960px;
+      height: 600px;
+      overflow-y: auto;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      background: #f8fafc;
+      padding: 1.5rem 1.75rem;
+      box-shadow: inset 0 1px 3px rgba(15,23,42,0.04);
+    }
     .demo-stage { display: none; }
     .demo-stage.active { display: block; }
 
@@ -614,8 +626,8 @@
       background: #fff;
       border: 1px solid #e2e8f0;
       border-radius: 10px;
-      padding: 1.5rem 1.6rem;
-      max-width: 540px;
+      padding: 1.75rem 1.9rem;
+      max-width: 640px;
     }
     .demo-card-title { font-size: 0.82rem; font-weight: 700; color: #334155; margin-bottom: 1rem; letter-spacing: 0.03em; text-transform: uppercase; }
     .demo-field { margin-bottom: 0.9rem; }
@@ -639,7 +651,7 @@
     .demo-btn-report:hover { background: #15803d; }
 
     /* ── Candidate Stage ── */
-    .demo-candidate-list { max-width: 600px; }
+    .demo-candidate-list { max-width: 720px; }
     .demo-candidate-header { font-size: 0.8rem; color: #64748b; margin-bottom: 0.7rem; }
     .demo-candidate {
       display: flex; align-items: flex-start; gap: 0.8rem;
@@ -676,7 +688,7 @@
     }
 
     /* ── Progress Log Stage ── */
-    .demo-log-wrap { max-width: 620px; }
+    .demo-log-wrap { max-width: 760px; }
     .demo-log-header {
       display: flex; align-items: center; gap: 0.5rem;
       font-size: 0.84rem; font-weight: 700; color: #334155;
@@ -689,9 +701,9 @@
     }
     @keyframes spin { to { transform: rotate(360deg); } }
     .demo-log-console {
-      background: #0f172a; border-radius: 8px; padding: 0.9rem 1rem;
+      background: #0f172a; border-radius: 8px; padding: 1rem 1.15rem;
       font-family: ui-monospace, 'SF Mono', Consolas, monospace;
-      font-size: 0.73rem; line-height: 1.7; min-height: 180px; max-height: 360px;
+      font-size: 0.78rem; line-height: 1.75; min-height: 240px; max-height: 420px;
       overflow-y: auto; color: #94a3b8;
     }
     .log-line { opacity: 0; transform: translateY(4px); transition: opacity 0.2s, transform 0.2s; }
@@ -708,7 +720,7 @@
     .log-fail { color: #f87171; }
 
     /* ── Report Stage ── */
-    .demo-report-wrap { max-width: 700px; }
+    .demo-report-wrap { max-width: 100%; }
     .demo-report-meta {
       display: flex; gap: 0.5rem; flex-wrap: wrap;
       margin-bottom: 0.9rem;
@@ -718,17 +730,25 @@
       border-radius: 4px; background: #eff6ff; color: #1d4ed8;
       border: 1px solid #bfdbfe;
     }
-    .demo-report-h1 { font-size: 1.1rem; font-weight: 800; color: #1e293b; margin-bottom: 0.25rem; }
-    .demo-report-h2 { font-size: 0.88rem; font-weight: 700; color: #1e293b; margin: 1.1rem 0 0.35rem; border-bottom: 1.5px solid #e2e8f0; padding-bottom: 0.3rem; }
-    .demo-report-h3 { font-size: 0.78rem; font-weight: 700; color: #334155; margin: 0.8rem 0 0.25rem; }
-    .demo-report-p  { font-size: 0.78rem; color: #475569; line-height: 1.75; margin-bottom: 0.5rem; }
+    .demo-report-h1 { font-size: 1.2rem; font-weight: 800; color: #1e293b; margin-bottom: 0.25rem; }
+    .demo-report-h2 { font-size: 0.95rem; font-weight: 700; color: #1e293b; margin: 1.2rem 0 0.4rem; border-bottom: 1.5px solid #e2e8f0; padding-bottom: 0.3rem; }
+    .demo-report-h3 { font-size: 0.83rem; font-weight: 700; color: #334155; margin: 0.85rem 0 0.3rem; }
+    .demo-report-p  { font-size: 0.82rem; color: #475569; line-height: 1.8; margin-bottom: 0.5rem; }
     .demo-report-exec {
       background: #f8fafc; border-left: 3px solid #6366f1;
-      border-radius: 0 6px 6px 0; padding: 0.75rem 1rem;
-      font-size: 0.78rem; color: #334155; line-height: 1.75;
+      border-radius: 0 6px 6px 0; padding: 0.85rem 1.1rem;
+      font-size: 0.82rem; color: #334155; line-height: 1.8;
       margin-bottom: 0.5rem;
     }
-    .demo-report-table { width: 100%; border-collapse: collapse; font-size: 0.74rem; margin: 0.5rem 0; }
+    .demo-report-table { width: 100%; border-collapse: collapse; font-size: 0.78rem; margin: 0.5rem 0; }
+    .demo-tcr-bar-wrap { display:flex; align-items:center; gap:0.5rem; margin:0.25rem 0; font-size:0.78rem; }
+    .demo-tcr-label { flex:0 0 130px; color:#475569; }
+    .demo-tcr-track { flex:1; height:7px; background:#e2e8f0; border-radius:4px; overflow:hidden; }
+    .demo-tcr-fill { height:7px; border-radius:4px; background:#6366f1; }
+    .demo-tcr-score { flex:0 0 30px; text-align:right; font-weight:700; color:#4338ca; }
+    .demo-report-list { font-size:0.82rem; color:#475569; line-height:1.8; margin:0.3rem 0 0.5rem 1.1rem; }
+    .demo-report-list li { margin-bottom:0.25rem; }
+    .demo-report-list ul { margin:0.2rem 0 0.3rem 1rem; }
     .demo-report-table th { background: #f1f5f9; color: #334155; font-weight: 600; padding: 0.4rem 0.6rem; border: 1px solid #e2e8f0; text-align: left; }
     .demo-report-table td { padding: 0.4rem 0.6rem; border: 1px solid #e2e8f0; color: #475569; vertical-align: top; }
     .demo-report-chip {
@@ -898,7 +918,7 @@
             </tbody>
           </table>
           <div class="demo-report-p">
-            재무 구조 측면에서 제약·바이오 사업부는 전사 R&D 예산의 약 62%를 GLP-1 관련 프로그램에 집중 투입하고 있으며, 2024년 Earnings Call을 통해 2026년까지 GLP-1 관련 R&D 예산 추가 30% 증액 계획을 공식화했습니다. [FMP-3]
+            재무 구조 측면에서 제약·바이오 사업부는 전사 R&D 예산의 약 62%를 GLP-1 관련 프로그램에 집중 투입하고 있으며, 2024년 Earnings Call을 통해 2026년까지 GLP-1 관련 R&D 예산 추가 30% 증액 계획을 공식화했습니다. [F-3]
           </div>
         </div>
 
@@ -927,7 +947,14 @@
         <!-- Ch3 -->
         <div class="demo-report-section" id="sec-ch3">
           <div class="demo-report-h2">Chapter 3. 기술 평가 및 특허 분석</div>
-          <div class="demo-report-h3">핵심 특허 포트폴리오 (Top 5, Relevance 순)</div>
+
+          <div class="demo-report-h3">① 기술 포지셔닝</div>
+          <div class="demo-report-p">
+            GLP-1 수용체 아고니스트는 Company A 제약·바이오 파이프라인 내에서 단일 적응증을 넘어 비만·제2형 당뇨·MASH로 확장되는 <b>플랫폼 기술</b>로 자리합니다. 펩타이드 구조 변형 기술이 후속 제형(경구·장기지속형)과 이중 작용제 개발의 공통 기반으로 작동하므로, 단일 후보물질 실패 리스크를 분산하면서 IP 포트폴리오를 수직적으로 누적하는 전략적 위치를 점합니다. 이러한 포지션은 아래 IP 포트폴리오 구성 방향 및 특허 전략 판별과 직결됩니다.
+          </div>
+
+          <div class="demo-report-h3">② 핵심 특허 포트폴리오</div>
+          <div class="demo-report-p" style="margin-bottom:0.35rem;">최근 5년간 검색된 특허 중 연관성이 높은 핵심 특허를 추출해 분석한 결과입니다 (전체 출원 특허의 일부).</div>
           <table class="demo-report-table">
             <thead><tr><th>#</th><th>출원번호</th><th>제목 (English)</th><th>출원일</th><th>TRL</th></tr></thead>
             <tbody>
@@ -938,33 +965,106 @@
               <tr><td>P-5</td><td>JP2023-143892</td><td>Sustained Release Formulation for GLP-1 Agonist Subcutaneous Injection</td><td>2023-09-05</td><td><span class="demo-report-chip chip-blue">TRL 5</span></td></tr>
             </tbody>
           </table>
-          <div class="demo-report-h3">CPC 분류 집중도</div>
-          <div class="demo-report-p">
-            Company A의 GLP-1 관련 특허는 <b>A61K38/26</b>(인슐린·글루카곤 유사 펩타이드), <b>A61K47/69</b>(나노입자 약물 전달), <b>C07K14/605</b>(인크레틴 펩타이드 구조) 3개 CPC 분류에 집중됩니다. 이는 <em>펩타이드 구조 최적화 → 제형·전달 기술 → 안전성 검증</em>으로 이어지는 수직 통합형 기술 개발 전략을 반영합니다.
+          <div class="demo-report-p" style="margin-top:0.35rem;">
+            <b>CPC 분류 집중도:</b> GLP-1 관련 특허는 <b>A61K38/26</b>(인슐린·글루카곤 유사 펩타이드), <b>A61K47/69</b>(나노입자 약물 전달), <b>C07K14/605</b>(인크레틴 펩타이드 구조) 3개 분류에 집중되어, <em>펩타이드 구조 최적화 → 제형·전달 기술 → 안전성 검증</em>으로 이어지는 수직 통합형 개발 전략을 반영합니다.
           </div>
-          <div class="demo-report-h3">TRL / CRL 이중 평가 요약</div>
+
+          <div class="demo-report-h3">③ 핵심 특허 4-Dimension 분석 — [P-1] 장기지속형 펩타이드 컨주게이트</div>
           <table class="demo-report-table">
-            <thead><tr><th>프로그램</th><th>TRL</th><th>CRL</th><th>종합 평가</th></tr></thead>
+            <tbody>
+              <tr><td style="width:130px;font-weight:700;">Core Claim</td><td>Fc 융합 + 화학적 링커로 안정화된 장기지속형 GLP-1 수용체 아고니스트 펩타이드 컨주게이트 및 약학 조성물</td></tr>
+              <tr><td style="font-weight:700;">Problem to Solve</td><td>기존 GLP-1 펩타이드의 짧은 혈중 반감기로 인한 1일 1회 주사 부담 및 복약 순응도 저하</td></tr>
+              <tr><td style="font-weight:700;">Technical Approach</td><td>Fc 도메인 융합으로 신장 청소율 감소 + 링커 위치 최적화로 수용체 결합능 보존 → 주 1회 피하주사 제형 구현</td></tr>
+              <tr><td style="font-weight:700;">Expected Impact</td><td>반감기 약 7배 연장, 수용체 선택성 유지, 면역원성 저감 (초록 명시 수치 기준)</td></tr>
+              <tr><td style="font-weight:700;">Competitive Moat</td><td>구조 변형 + 제형 특허를 동시 확보해 단순 조성물 특허 대비 회피 설계 난이도 상승, 후발 진입 장벽 형성</td></tr>
+              <tr><td style="font-weight:700;">교차 검증</td><td><span class="demo-report-chip chip-green">일치</span> 특허 클레임(반감기 연장)이 뉴스 [N-3]의 Phase 2 진입 성과와 부합</td></tr>
+            </tbody>
+          </table>
+
+          <div class="demo-report-h3">④ 기술 성숙도 (TRL) 및 상용화 평가</div>
+          <table class="demo-report-table">
+            <thead><tr><th>프로그램</th><th>TRL (임상 기준)</th><th>CRL</th><th>종합 평가</th></tr></thead>
             <tbody>
               <tr><td>CA-GLP-401 (당뇨)</td><td>TRL 6 — 임상 2상</td><td>CRL 4 — 파트너십 협상 중</td><td>상용화 경로 명확</td></tr>
               <tr><td>CA-GLP-412 (비만)</td><td>TRL 6 — 임상 2상</td><td>CRL 3 — 시장 전략 수립 중</td><td>빅파마 대비 2년 격차</td></tr>
               <tr><td>CA-OGP-501 (경구)</td><td>TRL 4 — 임상 1상</td><td>CRL 2 — 초기 단계</td><td>고위험·고보상 포지션</td></tr>
+              <tr><td>CA-GLP-720 (MASH)</td><td>TRL 3 — 전임상</td><td>CRL 1 — 연구 단계</td><td>적응증 확장 옵션</td></tr>
             </tbody>
           </table>
+          <ul class="demo-report-list">
+            <li><b>TRL 추정 시그널</b>
+              <ul>
+                <li><b>출원 집중도:</b> 최근 2년 내 출원이 전체의 60% 이상 → 개발 가속 신호로 TRL 상향 근거</li>
+                <li><b>Claim 유형:</b> 제형·제조(Method/Process) 특허와 구조·물질(Composition) 특허가 혼재 → 선도 후보는 공정 확립 단계(TRL 6) 시사</li>
+                <li><b>CapEx 연계:</b> 피하주사 제형 관련 설비 투자 언급 확인 → 선도 파이프라인 TRL 6~7 가능성 뒷받침</li>
+              </ul>
+            </li>
+            <li><b>핵심 과제 (Key Challenges):</b> 장기 투여 안전성 데이터 확보, 경쟁 심화 속 적응증 차별화, 폭증 수요 대응 양산(CDMO) 인프라 확충</li>
+          </ul>
+          <div class="demo-report-p" style="font-size:0.74rem;color:#94a3b8;margin-top:0.2rem;">※ TRL Framework는 美 국방부(DoD) Technology Readiness Assessment Guidebook(2025.2) 기준을 따름</div>
+
+          <div class="demo-report-h3">⑤ TCR 5-Dimension 평가 (기술·상업 준비도)</div>
+          <div style="margin:0.4rem 0 0.6rem;">
+            <div class="demo-tcr-bar-wrap"><span class="demo-tcr-label">R&amp;D · IP 활성도</span><span class="demo-tcr-track"><span class="demo-tcr-fill" style="width:80%"></span></span><span class="demo-tcr-score">4/5</span></div>
+            <div class="demo-tcr-bar-wrap"><span class="demo-tcr-label">기술 실증도</span><span class="demo-tcr-track"><span class="demo-tcr-fill" style="width:60%"></span></span><span class="demo-tcr-score">3/5</span></div>
+            <div class="demo-tcr-bar-wrap"><span class="demo-tcr-label">양산 확장성</span><span class="demo-tcr-track"><span class="demo-tcr-fill" style="width:40%"></span></span><span class="demo-tcr-score">2/5</span></div>
+            <div class="demo-tcr-bar-wrap"><span class="demo-tcr-label">규제 · 고객 인증</span><span class="demo-tcr-track"><span class="demo-tcr-fill" style="width:40%"></span></span><span class="demo-tcr-score">2/5</span></div>
+            <div class="demo-tcr-bar-wrap"><span class="demo-tcr-label">시장 · 재무 기여도</span><span class="demo-tcr-track"><span class="demo-tcr-fill" style="width:40%"></span></span><span class="demo-tcr-score">2/5</span></div>
+          </div>
+          <ul class="demo-report-list" style="font-size:0.78rem;">
+            <li><b>R&amp;D·IP 활성도 (4):</b> 다수 핵심 특허 출원 및 R&amp;D 예산 집중 확대</li>
+            <li><b>기술 실증도 (3):</b> 선도 후보 임상 2상 도달, 경구 제형은 1상 단계</li>
+            <li><b>양산·규제·시장 (2):</b> 상용 매출 미발생, 인허가 전 단계 — 상업화까지 거리 잔존</li>
+          </ul>
+
+          <div class="demo-report-h3">⑥ 임상 파이프라인 심층 분석</div>
+          <ul class="demo-report-list">
+            <li><b>임상 단계 현황</b>
+              <ul>
+                <li><b>임상 2상:</b> CA-GLP-401(제2형 당뇨), CA-GLP-412(비만) — 유효성·안전성 확인 단계</li>
+                <li><b>임상 1상:</b> CA-OGP-501(경구 제형) — 안전성·투여량 검증</li>
+                <li><b>전임상:</b> CA-GLP-720(MASH) — 적응증 확장 탐색</li>
+              </ul>
+            </li>
+            <li><b>임상 중단 사례:</b> 명시적인 임상 중단(Clinical Hold) 사례는 관측되지 않음</li>
+          </ul>
+
+          <div class="demo-report-h3">⑦ 기술 차별성 및 경쟁 구도</div>
+          <ul class="demo-report-list">
+            <li><b>기술적 장점</b>
+              <ul>
+                <li><b>약효 지속성:</b> 장기지속형 구조 설계로 투여 주기 개선(1일 → 주 1회) 지향</li>
+                <li><b>투약 편의성:</b> LNP 기반 경구 제형 개발로 주사제 대비 복약 순응도 차별화 시도</li>
+                <li><b>적응증 확장성:</b> 단일 플랫폼에서 당뇨·비만·MASH로 수평 확장 가능</li>
+              </ul>
+            </li>
+            <li><b>기술적 한계 및 장벽</b>
+              <ul>
+                <li>선도 빅파마(세마글루타이드·티르제파타이드) 대비 임상 단계 18~24개월 격차</li>
+                <li>경구 펩타이드의 낮은 생체이용률(&lt;1%) 극복 및 생물학적 동등성 입증 부담</li>
+                <li>폭증 수요 대응을 위한 고난도 펩타이드 양산(CMC) 공정 확보 과제</li>
+              </ul>
+            </li>
+          </ul>
+
+          <div class="demo-report-h3">⑧ 특허·노하우 관리 전략 판별</div>
+          <div class="demo-report-p">
+            특허 확인(O) + 직접 매출 미확인(X) 조합에 해당하여, <b>"기술 선점 단계 — 권리화는 완료됐으나 상업화 전 단계로 R&D 투자 집중 및 시장 진입 준비 중"</b>으로 판별됩니다. 이는 ① 기술 포지셔닝의 플랫폼 전략 및 빅파마 대비 진입 장벽 형성 근거와 정합합니다.
+          </div>
         </div>
 
         <!-- Reference -->
         <div class="demo-report-section" id="sec-ref">
           <div class="demo-report-h2">Reference</div>
           <div class="demo-report-h3">재무 데이터 출처</div>
-          <div class="demo-report-p" style="font-family:ui-monospace,monospace;font-size:0.72rem;">
-            FMP-1. Annual Report FY2024 (재무일: 2025-03-14 | FY2024 2024-12-31)<br />
-            FMP-2. Annual Report FY2023 (재무일: 2024-03-15 | FY2023 2023-12-31)<br />
-            FMP-3. Earnings Call Q4 2024 — FMP API<br />
-            FMP-4. 재무 데이터 (집계값) — FMP API
+          <div class="demo-report-p" style="font-family:ui-monospace,monospace;font-size:0.74rem;">
+            F-1. Annual Report FY2024 (재무일: 2025-03-14 | FY2024 2024-12-31)<br />
+            F-2. Annual Report FY2023 (재무일: 2024-03-15 | FY2023 2023-12-31)<br />
+            F-3. Earnings Call Q4 2024 — 재무 데이터 API<br />
+            F-4. 재무 데이터 (집계값) — 재무 데이터 API
           </div>
-          <div class="demo-report-h3">뉴스 출처 (Tavily)</div>
-          <div class="demo-report-p" style="font-family:ui-monospace,monospace;font-size:0.72rem;">
+          <div class="demo-report-h3">뉴스 출처</div>
+          <div class="demo-report-p" style="font-family:ui-monospace,monospace;font-size:0.74rem;">
             N-1. "GLP-1 Market Outlook 2025-2030: Key Players and Pipeline Analysis" — Reuters Health<br />
             N-2. "Global Anti-Obesity Drug Market Expected to Hit $150B by 2030" — Bloomberg<br />
             N-3. "Company A Advances GLP-1 Candidate CA-GLP-401 to Phase 2 Trials" — BioPharma Dive<br />
@@ -972,8 +1072,8 @@
             N-5. "Company A Signs License Agreement with PEPGEN for Oral Peptide Delivery" — BusinessWire
           </div>
           <div class="demo-report-h3">IP 출처</div>
-          <div class="demo-report-p" style="font-family:ui-monospace,monospace;font-size:0.72rem;">
-            P-1 ~ P-23. Google Patents / KIPRIS 특허 데이터베이스 API (출원일 기준 2004–2024)
+          <div class="demo-report-p" style="font-family:ui-monospace,monospace;font-size:0.74rem;">
+            P-1 ~ P-23. 특허 데이터베이스 API (출원일 기준 2004–2024)
           </div>
         </div>
 
@@ -1001,7 +1101,7 @@
       {t:'00:06', cls:'log-tag-kw',    msg:'[키워드 생성] 특허 어휘(patent vocabulary) 확장 중…'},
       {t:'00:08', cls:'log-tag-kw',    msg:'[키워드 생성] 검색 키워드 21개 확보 완료 <span class="log-pass">✓</span>'},
       {t:'00:09', cls:'log-tag-data',  msg:'[데이터 수집] 재무 데이터 수집 중… (Finance Agent)'},
-      {t:'00:13', cls:'log-tag-data',  msg:'[데이터 수집] 뉴스 검색 중… (News Agent / Tavily)'},
+      {t:'00:13', cls:'log-tag-data',  msg:'[데이터 수집] 뉴스 검색 중… (News Agent)'},
       {t:'00:17', cls:'log-tag-data',  msg:'[데이터 수집] 특허 검색 중 — 영문(EN) 검색… (IP Agent)'},
       {t:'00:21', cls:'log-tag-data',  msg:'[데이터 수집] 특허 검색 중 — CPC 기반 보충 검색…'},
       {t:'00:24', cls:'log-tag-data',  msg:'[데이터 수집] Family ID 그룹화·중복 제거 완료 (47건 → 23건) <span class="log-pass">✓</span>'},
