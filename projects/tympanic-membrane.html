@@ -54,14 +54,12 @@
   <p class="project-section-title">Overview</p>
   <div class="project-body">
     <p>
-      서울아산병원 이비인후과와 협력해 고막 내시경 이미지를 정상, 중이염, 천공 등 다중 병변으로
-      자동 분류하는 딥러닝 모델을 개발했습니다.
+      7,156장의 중이염 정상 및 질환 이미지 데이터 기반 딥러닝 분류 (정확도 95.8%)
+      Matlab 및 Python의 numpy, scikit-image, opencv 라이브러리를 통해 원본 이미지를 input 형태에 맞게 부동 소수형 텐서로 변환하여 딥러닝을 위한 이미지 전처리 과정 수행.
+      VGG16, ResNet, DenseNet, EfficientNet 등의 CNN 모델에 Transfer Learning을 적용한 네트워크 학습 및 Data Augmentation 수행.
+      Matplotlib, seaborn 라이브러리 및 grad-cam을 통한 테스트 결과 시각화.
     </p>
-    <p>
-      VGG16, ResNet, DenseNet, EfficientNet 4개 모델의 앙상블로 95.8% 분류 정확도를 달성했습니다.
-      Grad-CAM 활성화 맵을 활용해 모델이 어떤 이미지 영역에 근거해 예측했는지를 시각화하는
-      임상가 대상 검증 UI를 설계해 신뢰도를 높였습니다.
-    </p>
+    <img width="658" height="261" alt="Image" src="https://github.com/user-attachments/assets/450af151-826a-4b30-9b3c-921034d62869" />
   </div>
 
   <p class="project-section-title">Publication</p>
