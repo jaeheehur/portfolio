@@ -30,8 +30,9 @@
   <h1>CP Expense Post-Audit Monitoring System</h1>
 
   <p class="project-detail-desc">
-    제약사 공급자 지출 공시 의무화(2024년 12월 시행)에 대응해 개발한 MR 활동비 이상 패턴 탐지 시스템.
-    월 3,500건 이상의 활동을 100% 자동 심사하며, OCE 엔터프라이즈 플랫폼에 엔드투엔드 배포 완료.
+    의약품 공급업자 지출보고서 대국민 공개 의무화(2024년 12월 시행)에 대응해 정확한 품의/지출내역 데이터 관리를 위해 추진.
+    월 3천건 이상의 데이터를 수작업으로 검토하는 과정에서 발생가능한 Human-error 최소화하고 법적 리스크를 최소화하고자 함. 
+    기존에는 수작업으로 샘플링하여 진행하던 검토 프로세스를 Rule-based 로직으로 설계/구현하고 OCE 플랫폼 내에 배포하여 사후점검 커버리지 100% 달성.
   </p>
 
   <div class="skills-section">
@@ -48,28 +49,19 @@
     </div>
   </div>
 
-  <p class="project-section-title">Background</p>
-  <div class="project-body">
-    <p>
-      2024년 12월부터 제약사는 의료인 대상 지출 내역을 의무 공시해야 합니다.
-      비즈니스 스테이크홀더와 긴밀히 협력해 컴플라이언스 요건을 체계적인 룰 기반 탐지 로직으로 변환하고,
-      기존 수작업 검토 프로세스를 완전 자동화했습니다.
-    </p>
-  </div>
-
   <p class="project-section-title">Detection Rules</p>
   <div class="project-body">
     <p>
-      <strong>계정 불일치 탐지</strong> — 651건 적발<br />
-      <strong>거리 위반 탐지</strong> — Kakao Maps API 지오데식 분석 기반, 409건 적발<br />
-      <strong>다중 패턴 한도 초과 탐지</strong> — 80건 적발
+      <strong>품의유형 및 계정명 불일치</strong>: 디테일 활동 약 4만여 건 중 일부 불일치 유형 검출<br />
+      <strong>식음료 제공 장소와 병원 간 거리 점검</strong>: 디테일 활동을 위한 식음료 제공 장소와 디테일 대상의 소속 병원 거리가 조건 이내에 부합하는지 점검 - 약 10% 가량 재점검 필요 사례 검출<br />
+      <strong>계정 상한가액 초과 탐지</strong>: 100% 스크리닝 달성<br />
     </p>
   </div>
 
   <p class="project-section-title">Key Achievements</p>
   <div class="project-body">
     <p>
-      • 월 3,500건 이상 MR 활동 100% 자동 심사 달성<br />
+      • 월 3,500건 이상 사후점검에 대해 재점검 검토율 100% 커버리지 달성<br />
       • DataLake 파이프라인 + LG CNS 협업을 통해 OCE 플랫폼 엔드투엔드 배포<br />
       • 규제 공시 리스크 사전 탐지 체계 구축
     </p>
