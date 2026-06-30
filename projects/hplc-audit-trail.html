@@ -336,67 +336,6 @@
     </div>
   </div>
 
-  <!-- COMPARISON TABLE -->
-  <p class="project-section-title">기존 방식 vs. 플랫폼 비교</p>
-  <div class="compare-table-wrap">
-    <table class="compare-table">
-      <thead>
-        <tr>
-          <th>비교 항목</th>
-          <th>기존 수작업 방식</th>
-          <th>본 플랫폼</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>점검 범위</td>
-          <td><span class="badge-no">✗</span> 샘플링 점검 (전체의 약 15%)</td>
-          <td><span class="badge-yes">✓</span> 전수 점검 (100%)</td>
-        </tr>
-        <tr>
-          <td>장비당 점검 시간</td>
-          <td><span class="badge-no">✗</span> 약 23시간 소요</td>
-          <td><span class="badge-yes">✓</span> 약 3시간으로 단축</td>
-        </tr>
-        <tr>
-          <td>동일 샘플 재처리 감지</td>
-          <td><span class="badge-no">✗</span> 불가 — 수많은 이력 중 수동 확인 필요</td>
-          <td><span class="badge-yes">✓</span> 자동 감지 및 알림</td>
-        </tr>
-        <tr>
-          <td>생성·처리 시간 갭 비교</td>
-          <td><span class="badge-no">✗</span> 불가 — 날짜 비교 기능 부재</td>
-          <td><span class="badge-yes">✓</span> 자동 계산 및 시각화</td>
-        </tr>
-        <tr>
-          <td>시간 갭 기준 필터링/정렬</td>
-          <td><span class="badge-no">✗</span> 불가 — 필터링 기준 부재</td>
-          <td><span class="badge-yes">✓</span> 이상치 구간 설정 및 sorting</td>
-        </tr>
-        <tr>
-          <td>Action 유형별 분석</td>
-          <td><span class="badge-no">✗</span> 불가 — 개별 로그만 확인 가능</td>
-          <td><span class="badge-yes">✓</span> 유형별 집계·시각화·추이 분석</td>
-        </tr>
-        <tr>
-          <td>규제 문서 조회</td>
-          <td><span class="badge-no">✗</span> 수동 검색 (문서 개별 열람)</td>
-          <td><span class="badge-yes">✓</span> RAG 기반 AI 챗봇 즉시 조회</td>
-        </tr>
-        <tr>
-          <td>이상 패턴 통계 분석</td>
-          <td><span class="badge-no">✗</span> 불가</td>
-          <td><span class="badge-yes">✓</span> Z-Score 기반 임계값 자동 탐지</td>
-        </tr>
-        <tr>
-          <td>리포트 내보내기</td>
-          <td><span class="badge-no">✗</span> 불가 — 화면 캡처 수준</td>
-          <td><span class="badge-yes">✓</span> Excel 3-sheet 자동 생성 (xlsxwriter)</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
   <!-- IMPACT -->
   <p class="project-section-title">성과 및 기대효과</p>
   <div class="impact-grid">
@@ -414,13 +353,62 @@
     </div>
   </div>
 
+    <div class="compare-table-wrap">
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>비교 항목</th>
+          <th>기존 수작업 방식</th>
+          <th>본 플랫폼</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>점검 범위</td>
+          <td><span class="badge-no">🔴</span> 샘플링 점검 (전체의 약 15%)</td>
+          <td><span class="badge-yes">🟢</span> 전수 점검 (100%)</td>
+        </tr>
+        <tr>
+          <td>장비당 점검 시간</td>
+          <td><span class="badge-no">🔴</span> 약 23시간 소요</td>
+          <td><span class="badge-yes">🟢</span> 약 3시간으로 단축</td>
+        </tr>
+        <tr>
+          <td>동일 샘플 재처리 감지</td>
+          <td><span class="badge-no">🟡</span> 제한됨 — 수많은 이력 중 수동 확인 필요</td>
+          <td><span class="badge-yes">🟢</span> 자동 감지 및 알림</td>
+        </tr>
+        <tr>
+          <td>생성·처리 시간 Gap 비교</td>
+          <td><span class="badge-no">🔴</span> 불가 — 시간 Gap 비교 기능 부재</td>
+          <td><span class="badge-yes">🟢</span> 자동 계산 및 시각화</td>
+        </tr>
+        <tr>
+          <td>Action 유형별 분석</td>
+          <td><span class="badge-no">🟡</span> 제한됨 — 개별 로그만 확인 가능</td>
+          <td><span class="badge-yes">🟢</span> 유형별 집계·시각화·추이 분석</td>
+        </tr>
+        <tr>
+          <td>규제 문서 조회</td>
+          <td><span class="badge-no">🟡</span> 수동 검색 (문서 개별 열람)</td>
+          <td><span class="badge-yes">🟢</span> RAG 기반 AI 챗봇 즉시 조회</td>
+        </tr>
+        <tr>
+          <td>이상 패턴 통계 분석</td>
+          <td><span class="badge-no">🔴</span> 불가 — 모든 분석법에 대해 전체 raw 데이터 다운로드 및 파이프라인 구축 필요</td>
+          <td><span class="badge-yes">🟢</span> Z-Score 기반 임계값 자동 탐지</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
   <p class="project-section-title">Key Achievements</p>
   <div class="project-body">
     <p>
-      • 연간 약 5만 건 이상의 Audit Trail 데이터를 100% 전수 자동 점검 체계로 전환<br />
+      • 연간 약 5만 건 이상의 Audit Trail 데이터를 100% 전수 자동 점검 가능성 검증<br />
       • 장비당 점검 시간 23시간 → 3시간, 약 20시간/대 공수 절감<br />
       • 전사 확대 시 약 50대 기준 연간 1,000시간 이상 점검 공수 절감 기대<br />
-      • 시간 갭 분석으로 재처리 의심 케이스 자동 탐지 → 데이터 무결성 이슈 사전 방지<br />
+      • 시간 Gap 분석으로 재처리 의심 케이스 자동 탐지 → 데이터 무결성 이슈 사전 방지<br />
       • RAG 파이프라인(PyPDFLoader → FAISS → nemotron-nano:8b)으로 규제 문서 즉시 질의응답 지원<br />
       • 규제기관 지적에 따른 제조정지 행정처분 리스크 사전 차단
     </p>
@@ -523,7 +511,7 @@ Chart.defaults.color = '#4b5563';
   ];
   // 이상치 (outlier): [y=method index, x=delay h]
   const outliers=[
-    {x:0,y:82},{x:1,y:114},{x:3,y:95},{x:3,y:130}
+    {x:0,y:10},{x:1,y:15},{x:3,y:9.7},{x:3,y:9.2}
   ];
 
   new Chart(document.getElementById('chartBox'),{
