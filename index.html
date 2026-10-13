@@ -4,6 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jaehee Hur / Portfolio</title>
+  <!-- SEO -->
+  <meta name="description" content="Jaehee Hur 포트폴리오. 제약/바이오/의료 등 규제 산업에서 Multi-agent LLM, 문헌 정보화, 컴플라이언스 자동화 AX 과제를 개발하는 Senior Data Scientist." />
+  <meta name="theme-color" content="#1a6ef5" />
+  <link rel="icon" type="image/svg+xml" href="static/images/favicon.svg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Jaehee Hur / Portfolio" />
+  <meta property="og:description" content="Jaehee Hur 포트폴리오. 제약/바이오/의료 등 규제 산업에서 Multi-agent LLM, 문헌 정보화, 컴플라이언스 자동화 AX 과제를 개발하는 Senior Data Scientist." />
+  <meta property="og:url" content="https://jaeheehur.github.io/portfolio/" />
+  <meta property="og:image" content="https://jaeheehur.github.io/portfolio/static/images/og.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <!-- /SEO -->
   <link rel="stylesheet" href="static/css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -24,7 +35,7 @@
   <p class="hero-eyebrow">Hello, I'm</p>
   <h1>Jaehee Hur<br /><em>Senior Data Scientist</em></h1>
   <p class="hero-desc">
-    의료 데이터 분석 연구에서 출발해, 제약/화학 현업의 품질/규제/R&amp;D 업무를 데이터와 LLM으로 자동화해 왔습니다.
+    병원, 헬스케어 지주사, 제약/화학 현업까지 규제가 엄격한 환경에서 8년 넘게 데이터 확보부터 모델 배포까지 AI 시스템을 직접 만들어 왔습니다.
     지금은 Multi-agent LLM 오케스트레이션, 문헌 정보화, 규제 컴플라이언스 자동화 중심으로 AX 과제를 개발합니다.
   </p>
   <div class="hero-links">
@@ -66,7 +77,7 @@
   <div class="featured-grid">
 
     <a class="featured-card" href="projects/company-rnd-portfolio-intelligence-agent.html" data-category="llm">
-      <div class="card-thumb">🕵️</div>
+      <div class="card-thumb"><img src="static/images/covers/rd-planning-agent.svg" alt="" loading="lazy" /></div>
       <div class="card-body">
         <p class="card-label">LG화학 / 2026</p>
         <h2 class="card-title">R&amp;D Planning Agent</h2>
@@ -84,7 +95,7 @@
     </a>
 
     <a class="featured-card" href="projects/hplc-audit-trail.html" data-category="quality">
-      <div class="card-thumb">📋</div>
+      <div class="card-thumb"><img src="static/images/covers/hplc-audit-trail.svg" alt="" loading="lazy" /></div>
       <div class="card-body">
         <p class="card-label">LG화학 / 2025</p>
         <h2 class="card-title">HPLC Audit Trail Monitoring Platform</h2>
@@ -110,98 +121,92 @@
   <div class="other-grid">
 
     <a class="other-card" href="projects/cp-expense-audit.html" data-category="quality">
-      <div class="other-card-top">
-        <span class="other-card-icon">💼</span>
-        <span class="icon-link">↗</span>
-      </div>
-      <p class="other-card-label">LG화학 / 2024</p>
-      <h3 class="other-card-title">CP Expense Post-Audit Monitoring System</h3>
-      <p class="other-card-desc">MR 활동비 이상 패턴 탐지 시스템. 3,500+ 건/월 100% 자동 심사. OCE 엔터프라이즈 플랫폼 배포 완료.</p>
-      <div class="tag-list">
-        <span class="tag">Python</span>
-        <span class="tag">Rule-based Detection</span>
-        <span class="tag">Kakao Maps API</span>
-        <span class="tag">Plotly/Dash</span>
+      <div class="other-card-thumb"><img src="static/images/covers/cp-expense-audit.svg" alt="" loading="lazy" /></div>
+      <div class="other-card-body">
+        <p class="other-card-label">LG화학 / 2024</p>
+        <h3 class="other-card-title">CP Expense Post-Audit Monitoring System</h3>
+        <p class="other-card-desc">MR 활동비 이상 패턴 탐지 시스템. 3,500+ 건/월 100% 자동 심사. OCE 엔터프라이즈 플랫폼 배포 완료.</p>
+        <div class="tag-list">
+          <span class="tag">Python</span>
+          <span class="tag">Rule-based Detection</span>
+          <span class="tag">Kakao Maps API</span>
+          <span class="tag">Plotly/Dash</span>
+        </div>
       </div>
     </a>
 
     <a class="other-card" href="projects/pharmacovigilance.html" data-category="quality">
-      <div class="other-card-top">
-        <span class="other-card-icon">💊</span>
-        <span class="icon-link">↗</span>
-      </div>
-      <p class="other-card-label">LG화학 / 2024</p>
-      <h3 class="other-card-title">Pharmacovigilance Literature Monitoring Platform</h3>
-      <p class="other-card-desc">PubMed 기반 부작용 문헌 자동 감시. 4-모델 NER 앙상블, MedDRA 98% 커버리지.</p>
-      <div class="tag-list">
-        <span class="tag">NER</span>
-        <span class="tag">BioBERT</span>
-        <span class="tag">scispaCy</span>
-        <span class="tag">Streamlit</span>
+      <div class="other-card-thumb"><img src="static/images/covers/pharmacovigilance.svg" alt="" loading="lazy" /></div>
+      <div class="other-card-body">
+        <p class="other-card-label">LG화학 / 2024</p>
+        <h3 class="other-card-title">Pharmacovigilance Literature Monitoring Platform</h3>
+        <p class="other-card-desc">PubMed 기반 부작용 문헌 자동 감시. 4-모델 NER 앙상블, MedDRA 98% 커버리지.</p>
+        <div class="tag-list">
+          <span class="tag">NER</span>
+          <span class="tag">BioBERT</span>
+          <span class="tag">scispaCy</span>
+          <span class="tag">Streamlit</span>
+        </div>
       </div>
     </a>
 
     <a class="other-card" href="projects/reagent-usage-prediction.html" data-category="forecast">
-      <div class="other-card-top">
-        <span class="other-card-icon">🧪</span>
-        <span class="icon-link">↗</span>
-      </div>
-      <p class="other-card-label">LG화학 / 2023</p>
-      <h3 class="other-card-title">Reagent Usage Prediction AI &amp; Inventory Dashboard</h3>
-      <p class="other-card-desc">약 800종 시약의 3개월 선행 사용량 예측. K-means 클러스터링 + 앙상블 ML로 연간 폐기 비용 약 7% 절감. 3개 플랜트 확대 적용.</p>
-      <div class="tag-list">
-        <span class="tag">PySpark</span>
-        <span class="tag">LightGBM</span>
-        <span class="tag">K-means</span>
-        <span class="tag">Plotly/Dash</span>
+      <div class="other-card-thumb"><img src="static/images/covers/reagent-usage-prediction.svg" alt="" loading="lazy" /></div>
+      <div class="other-card-body">
+        <p class="other-card-label">LG화학 / 2023</p>
+        <h3 class="other-card-title">Reagent Usage Prediction AI &amp; Inventory Dashboard</h3>
+        <p class="other-card-desc">약 800종 시약의 3개월 선행 사용량 예측. K-means 클러스터링 + 앙상블 ML로 연간 폐기 비용 약 7% 절감. 3개 플랜트 확대 적용.</p>
+        <div class="tag-list">
+          <span class="tag">PySpark</span>
+          <span class="tag">LightGBM</span>
+          <span class="tag">K-means</span>
+          <span class="tag">Plotly/Dash</span>
+        </div>
       </div>
     </a>
 
     <a class="other-card" href="projects/macroeconomic-forecasting.html" data-category="forecast">
-      <div class="other-card-top">
-        <span class="other-card-icon">📈</span>
-        <span class="icon-link">↗</span>
-      </div>
-      <p class="other-card-label">LG화학 / 2023</p>
-      <h3 class="other-card-title">Macroeconomic Price Forecasting &amp; Scenario Optimization</h3>
-      <p class="other-card-desc">15년 거시경제 시계열 DB + SARIMA/HoltWinters/Prophet 앙상블 + SLSQP 가격 최적화. 사내 AX Best Practice 수상.</p>
-      <div class="tag-list">
-        <span class="tag">Prophet</span>
-        <span class="tag">SARIMA</span>
-        <span class="tag">SciPy (SLSQP)</span>
-        <span class="tag">Time Series</span>
+      <div class="other-card-thumb"><img src="static/images/covers/macroeconomic-forecasting.svg" alt="" loading="lazy" /></div>
+      <div class="other-card-body">
+        <p class="other-card-label">LG화학 / 2023</p>
+        <h3 class="other-card-title">Macroeconomic Price Forecasting &amp; Scenario Optimization</h3>
+        <p class="other-card-desc">15년 거시경제 시계열 DB + SARIMA/HoltWinters/Prophet 앙상블 + SLSQP 가격 최적화. 사내 AX Best Practice 수상.</p>
+        <div class="tag-list">
+          <span class="tag">Prophet</span>
+          <span class="tag">SARIMA</span>
+          <span class="tag">SciPy (SLSQP)</span>
+          <span class="tag">Time Series</span>
+        </div>
       </div>
     </a>
 
     <a class="other-card" href="projects/targetwiki.html" data-category="bio">
-      <div class="other-card-top">
-        <span class="other-card-icon">🎯</span>
-        <span class="icon-link">↗</span>
-      </div>
-      <p class="other-card-label">LG화학 / 2023</p>
-      <h3 class="other-card-title">TargetWiki: Target Validation Auto-Report</h3>
-      <p class="other-card-desc">15+ 외부 DB 크롤링 → python-pptx 자동 보고서 생성. 리서치 시간 87% 단축 (120분 → 5~20분).</p>
-      <div class="tag-list">
-        <span class="tag">Selenium</span>
-        <span class="tag">BeautifulSoup</span>
-        <span class="tag">python-pptx</span>
-        <span class="tag">PyInstaller</span>
+      <div class="other-card-thumb"><img src="static/images/covers/targetwiki.svg" alt="" loading="lazy" /></div>
+      <div class="other-card-body">
+        <p class="other-card-label">LG화학 / 2023</p>
+        <h3 class="other-card-title">TargetWiki: Target Validation Auto-Report</h3>
+        <p class="other-card-desc">15+ 외부 DB 크롤링 → python-pptx 자동 보고서 생성. 리서치 시간 87% 단축 (120분 → 5~20분).</p>
+        <div class="tag-list">
+          <span class="tag">Selenium</span>
+          <span class="tag">BeautifulSoup</span>
+          <span class="tag">python-pptx</span>
+          <span class="tag">PyInstaller</span>
+        </div>
       </div>
     </a>
 
     <a class="other-card" href="projects/tympanic-membrane.html" data-category="bio">
-      <div class="other-card-top">
-        <span class="other-card-icon">👂</span>
-        <span class="icon-link">↗</span>
-      </div>
-      <p class="other-card-label">서울아산병원 / 2019</p>
-      <h3 class="other-card-title">Tympanic Membrane Classification (Deep Learning)</h3>
-      <p class="other-card-desc">고막 내시경 이미지 다중 분류. VGG16/ResNet/DenseNet/EfficientNet 앙상블, 95.8% 정확도. PLOS ONE 게재.</p>
-      <div class="tag-list">
-        <span class="tag">Keras</span>
-        <span class="tag">EfficientNet</span>
-        <span class="tag">Grad-CAM</span>
-        <span class="tag">Ensemble</span>
+      <div class="other-card-thumb"><img src="static/images/covers/tympanic-membrane.svg" alt="" loading="lazy" /></div>
+      <div class="other-card-body">
+        <p class="other-card-label">서울아산병원 / 2019</p>
+        <h3 class="other-card-title">Tympanic Membrane Classification (Deep Learning)</h3>
+        <p class="other-card-desc">고막 내시경 이미지 다중 분류. VGG16/ResNet/DenseNet/EfficientNet 앙상블, 95.8% 정확도. PLOS ONE 게재.</p>
+        <div class="tag-list">
+          <span class="tag">Keras</span>
+          <span class="tag">EfficientNet</span>
+          <span class="tag">Grad-CAM</span>
+          <span class="tag">Ensemble</span>
+        </div>
       </div>
     </a>
 
@@ -223,16 +228,30 @@
       <div class="pub-year">2022</div>
       <div class="pub-body">
         <div class="pub-title">Automated multi-class classification for prediction of tympanic membrane changes with deep learning models</div>
-        <div class="pub-meta">Choi Y., Chae J., Park K., <strong>Hur J.</strong>, Kweon J., Ahn J. / <em>PLOS ONE (SCIE)</em></div>
+        <div class="pub-meta">Choi Y., Chae J., Park K., <strong>Hur J.</strong>, Kweon J., Ahn J. / <em>PLOS ONE</em></div>
       </div>
     </a>
-    <a class="pub-item" href="career.html">
+    <div class="pub-item">
       <div class="pub-year">2021</div>
       <div class="pub-body">
-        <div class="pub-title">Kwon et al., Cardiovascular Drugs and Therapy</div>
-        <div class="pub-meta">스타틴 치료 환자군 장기 추적 RWE 코호트 연구, 데이터셋 구축 담당</div>
+        <div class="pub-title">Cardiovascular Event Rates in Statin-Treated Korean Patients with Cardiovascular Disease</div>
+        <div class="pub-meta">Kwon O., Na W., <strong>Hur J.</strong>, et al. / <em>Cardiovascular Drugs and Therapy</em></div>
       </div>
-    </a>
+    </div>
+    <div class="pub-item">
+      <div class="pub-year">2019</div>
+      <div class="pub-body">
+        <div class="pub-title">Deep learning segmentation of major vessels in X-ray coronary angiography</div>
+        <div class="pub-meta">Yang S., Kweon J., Roh J-H., ..., <strong>Hur J.</strong>, et al. / <em>Scientific Reports</em></div>
+      </div>
+    </div>
+    <div class="pub-item">
+      <div class="pub-year">2017</div>
+      <div class="pub-body">
+        <div class="pub-title">A Variable Impacts Measurement in Random Forest for Mobile Cloud Computing</div>
+        <div class="pub-meta"><strong>Hur J.</strong>, Ihm S., Park Y. / <em>Wireless Communications and Mobile Computing</em></div>
+      </div>
+    </div>
   </div>
 
   <div class="section-header">

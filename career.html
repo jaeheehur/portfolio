@@ -4,6 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Career / Jaehee Hur</title>
+  <!-- SEO -->
+  <meta name="description" content="서울아산병원, 녹십자홀딩스, LG화학으로 이어진 경력과 학력, 기술 스택." />
+  <meta name="theme-color" content="#1a6ef5" />
+  <link rel="icon" type="image/svg+xml" href="static/images/favicon.svg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Career / Jaehee Hur" />
+  <meta property="og:description" content="서울아산병원, 녹십자홀딩스, LG화학으로 이어진 경력과 학력, 기술 스택." />
+  <meta property="og:url" content="https://jaeheehur.github.io/portfolio/career.html" />
+  <meta property="og:image" content="https://jaeheehur.github.io/portfolio/static/images/og.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <!-- /SEO -->
   <link rel="stylesheet" href="static/css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -52,8 +63,8 @@
           <div class="work-card">
             <div class="work-card-title">R&amp;D Planning 효율화: 지능형 에이전트 개발</div>
             <ul class="work-card-list">
-              <li><strong>R&amp;D Planning Agent</strong>: LangGraph 멀티 에이전트로 타겟 기업 재무제표/특허/임상/뉴스 자동 수집, 분석 및 인텔리전스 리포트 생성 자동화</li>
-              <li><strong>신물질 스크리닝 플랫폼</strong>: 특허/논문 자동 수집 후 LLM으로 실험 조건/물성 파라미터 구조화 DB 구축. Flask 대시보드 + Text2SQL 챗봇으로 자연어 쿼리 → SQL 변환 문헌 조회 시스템 구현</li>
+              <li><strong><a class="work-link" href="projects/company-rnd-portfolio-intelligence-agent.html">R&amp;D Planning Agent</a></strong>: LangGraph 멀티 에이전트로 타겟 기업 재무제표/특허/임상/뉴스 자동 수집, 분석 및 인텔리전스 리포트 생성 자동화</li>
+              <li><strong><a class="work-link" href="projects/materials-discovery.html">신물질 스크리닝 플랫폼</a></strong>: 특허/논문 자동 수집 후 LLM으로 실험 조건/물성 파라미터 구조화 DB 구축. Flask 대시보드 + Text2SQL 챗봇으로 자연어 쿼리 → SQL 변환 문헌 조회 시스템 구현</li>
             </ul>
             <div class="work-card-tags">
               <span class="tag">LangGraph</span>
@@ -65,10 +76,27 @@
             </div>
           </div>
 
+          <div class="work-card">
+            <div class="work-card-title">분석 파이프라인 및 프로덕션 배포</div>
+            <ul class="work-card-list">
+              <li><strong>배포:</strong> 사내 에이전트 2종을 GitLab CI/CD 파이프라인으로 GCP Cloud Run에 전사 배포, AWS EC2 기반 사내 ML 플랫폼에 추론 모델 4종 배포</li>
+              <li><strong>분석 환경:</strong> GCP Workbench에서 BigQuery SQL로 데이터를 조회하고 Snowflake 데이터셋을 Dataiku에 연결해 분석가가 바로 쓸 수 있는 분석 환경 구성</li>
+              <li><strong>온프레미스 LLM:</strong> 데이터 반출이 제한된 환경을 위해 로컬 LLM(Ollama) + RAG 파이프라인을 사내 인프라에서 운영</li>
+            </ul>
+            <div class="work-card-tags">
+              <span class="tag">GCP Cloud Run</span>
+              <span class="tag">GitLab CI/CD</span>
+              <span class="tag">AWS EC2</span>
+              <span class="tag">BigQuery</span>
+              <span class="tag">Dataiku</span>
+              <span class="tag">Ollama</span>
+            </div>
+          </div>
+
         </div>
 
         <div class="career-projects-ref">
-          📂&nbsp; 주요 프로젝트 상세 내용은 →&nbsp;<a href="projects.html">Projects 페이지</a>를 참고해주세요.
+          주요 프로젝트 상세 내용은 <a href="projects.html">Projects 페이지</a>를 참고해주세요.
         </div>
       </div>
     </div>
@@ -90,9 +118,9 @@
           <div class="work-card">
             <div class="work-card-title">제조 품질 경쟁력 강화: AX 플랫폼 개발</div>
             <ul class="work-card-list">
-              <li><strong>HPLC Audit Trail DI 모니터링</strong>: 15% 수작업 샘플링 → 100% 자동 전수 점검 체계 전환 검증. 점검 소요시간 87% 단축 (장비 1대당 23h → 3h), 전사 확대 시 연간 1,000h+ 절감 기대. 실제 점검 과정에서 누락된 미확인 재분석 케이스 발견 → 규제기관 행정처분 리스크 사전 차단</li>
-              <li><strong>시약 사용량 예측 &amp; 재고 관리</strong>: 약 800종 시약 3개월 선행 예측 AI 모델 (K-means 클러스터링 + LightGBM 앙상블), 3개 플랜트 확대 적용. 연간 시약 폐기 비용 약 7% 절감</li>
-              <li><strong>고객불만 통합 모니터링</strong>: NLP 기반 유형 분류 모델 + 전사 KPI 대시보드 구축. 과거 수작업에 의존하던 고객불만 분류 체계 표준화 및 자동화</li>
+              <li><strong><a class="work-link" href="projects/hplc-audit-trail.html">HPLC Audit Trail DI 모니터링</a></strong>: 15% 수작업 샘플링 → 100% 자동 전수 점검 체계 전환 검증. 점검 소요시간 87% 단축 (장비 1대당 23h → 3h), 전사 확대 시 연간 1,000h+ 절감 기대. 실제 점검 과정에서 누락된 미확인 재분석 케이스 발견 → 규제기관 행정처분 리스크 사전 차단</li>
+              <li><strong><a class="work-link" href="projects/reagent-usage-prediction.html">시약 사용량 예측 &amp; 재고 관리</a></strong>: 약 800종 시약 3개월 선행 예측 AI 모델 (K-means 클러스터링 + LightGBM 앙상블), 3개 플랜트 확대 적용. 연간 시약 폐기 비용 약 7% 절감</li>
+              <li><strong><a class="work-link" href="projects/customer-complaint-platform.html">고객불만 통합 모니터링</a></strong>: NLP 기반 유형 분류 모델 + 전사 KPI 대시보드 구축. 과거 수작업에 의존하던 고객불만 분류 체계 표준화 및 자동화</li>
             </ul>
             <div class="work-card-tags">
               <span class="tag">Plotly/Dash</span>
@@ -108,8 +136,8 @@
           <div class="work-card">
             <div class="work-card-title">제약 컴플라이언스 준수: 모니터링 자동화</div>
             <ul class="work-card-list">
-              <li><strong>Pharmacovigilance 문헌 모니터링</strong>: PubMed 자동 수집 파이프라인 구축. 4종 NER 앙상블로 약물/부작용/환자 키워드 구조화 추출, LLM 기반 트렌드 인사이트 자동 생성</li>
-              <li><strong>CP Expense Post-Audit 모니터링</strong>: MR 활동비 이상 패턴 탐지 시스템. 3,500+ 건/월 100% 자동 심사, Rule-based 다중 조건 필터링 + Kakao Maps API 위치 정합성 검증. OCE 엔터프라이즈 플랫폼 배포</li>
+              <li><strong><a class="work-link" href="projects/pharmacovigilance.html">Pharmacovigilance 문헌 모니터링</a></strong>: PubMed 자동 수집 파이프라인 구축. 4종 NER 앙상블로 약물/부작용/환자 키워드 구조화 추출, LLM 기반 트렌드 인사이트 자동 생성</li>
+              <li><strong><a class="work-link" href="projects/cp-expense-audit.html">CP Expense Post-Audit 모니터링</a></strong>: MR 활동비 이상 패턴 탐지 시스템. 3,500+ 건/월 100% 자동 심사, Rule-based 다중 조건 필터링 + Kakao Maps API 위치 정합성 검증. OCE 엔터프라이즈 플랫폼 배포</li>
             </ul>
             <div class="work-card-tags">
               <span class="tag">NER</span>
@@ -125,8 +153,8 @@
           <div class="work-card">
             <div class="work-card-title">R&amp;D 연구 효율성 증대: 플랫폼 개발</div>
             <ul class="work-card-list">
-              <li><strong>Splicing Site Prediction AI</strong>: 신약 개발 초기 단계 Splicing 변이 조기 식별 AI 플랫폼. 후보 물질 선별 리스크를 사전에 감지하여 R&amp;D 의사결정 지원</li>
-              <li><strong>TargetWiki 자동 보고서 생성</strong>: 15+ 외부 DB 자동 크롤링 후 python-pptx로 타겟 밸리데이션 리포트 자동 생성. 리서치 소요 시간 87% 단축 (120분 → 5~20분)</li>
+              <li><strong><a class="work-link" href="projects/splicing-prediction.html">Splicing Site Prediction AI</a></strong>: 신약 개발 초기 단계 Splicing 변이 조기 식별 AI 플랫폼. 후보 물질 선별 리스크를 사전에 감지하여 R&amp;D 의사결정 지원</li>
+              <li><strong><a class="work-link" href="projects/targetwiki.html">TargetWiki 자동 보고서 생성</a></strong>: 15+ 외부 DB 자동 크롤링 후 python-pptx로 타겟 밸리데이션 리포트 자동 생성. 리서치 소요 시간 87% 단축 (120분 → 5~20분)</li>
             </ul>
             <div class="work-card-tags">
               <span class="tag">Deep Learning</span>
@@ -137,19 +165,34 @@
             </div>
           </div>
 
+          <div class="work-card">
+            <div class="work-card-title">데이터 기반 의사결정 지원: 예측/최적화 모델</div>
+            <ul class="work-card-list">
+              <li><strong><a class="work-link" href="projects/macroeconomic-forecasting.html">거시경제 가격 예측 &amp; 시나리오 최적화</a></strong>: 15년 시계열 DB와 SARIMA/HoltWinters/Prophet 앙상블, SLSQP 최적화로 경험 기반 가격 협상을 데이터 기반으로 전환. 연간 약 250시간 수작업 절감, 사내 AX Best Practice 수상</li>
+              <li><strong><a class="work-link" href="projects/ivf-prediction.html">IVF 생존 출생 예측 모델</a></strong>: HFEA 데이터셋 기반 예측 모델로 LG Aimers 6회 해커톤(2,000+ 참가자) 출제 및 심사, FAME 2025에서 150+ 의사 대상 발표</li>
+            </ul>
+            <div class="work-card-tags">
+              <span class="tag">Prophet</span>
+              <span class="tag">SARIMA</span>
+              <span class="tag">SciPy (SLSQP)</span>
+              <span class="tag">LightGBM</span>
+              <span class="tag">Feature Engineering</span>
+            </div>
+          </div>
+
           <!-- Card 4: 멘토링 -->
           <div class="work-card">
             <div class="work-card-title">사내 AX 확산: 현업 멘토링 &amp; 플랫폼 교육</div>
             <ul class="work-card-list">
               <li>비개발자인 현업 담당자들이 실무 데이터를 활용하여 기본 분석 및 시각화를 수행할 수 있도록 AX 과제 분석 멘토링 지원</li>
-              <li>사내 데이터 분석 플랫폼 교육 수행</li>
+              <li>사내 데이터 분석 플랫폼 교육 및 AX Best Practice 공유 세션 진행</li>
             </ul>
           </div>
 
         </div>
 
         <div class="career-projects-ref">
-          📂&nbsp; 주요 프로젝트 상세 내용은 →&nbsp;<a href="projects.html">Projects 페이지</a>를 참고해주세요.
+          주요 프로젝트 상세 내용은 <a href="projects.html">Projects 페이지</a>를 참고해주세요.
         </div>
       </div>
     </div>
@@ -169,7 +212,6 @@
 
           <!-- Card 1: 신사업 기획 -->
           <div class="work-card">
-            <div class="work-card-icon">💡</div>
             <div class="work-card-title">디지털 헬스케어 신사업 기획 및 데이터 거버넌스 구축</div>
             <ul class="work-card-list">
               <li>데이터 3법 시행 이후 지주사 관점의 데이터 사업화 전략 발굴 담당. 글로벌 디지털 헬스케어 투자 동향, 보건의료 마이크로데이터 시범사업 등 정책/규제 변화 지속 모니터링</li>
@@ -179,12 +221,12 @@
 
           <!-- Card 2: 계열사 DX -->
           <div class="work-card">
-            <div class="work-card-icon">🔄</div>
             <div class="work-card-title">계열사 대상 DX 프로젝트 기획 및 실무 수행</div>
             <ul class="work-card-list">
               <li>GC랩스/유비케어/GC Labs/녹십자혈방 등 다수 계열사 대상 DX 과제 인터뷰 수행, 데이터 보유 현황 및 비즈니스 Pain point 파악</li>
               <li>계열사별 데이터 구조/업무 특성을 부서 단위로 분석하고 DX 과제 개선 영역 구체화 및 우선순위 수립</li>
               <li>공공 데이터 API 호출, 크롤링, DB 적재, 기업정리 활용 실무 등 데이터 수집/전처리 직접 수행</li>
+              <li>그룹 가명처리 담당자로서 데이터 거버넌스 가이드라인 수립에 참여해 계열사 간 헬스케어 데이터의 적법한 활용 지원</li>
             </ul>
             <div class="work-card-tags">
               <span class="tag">Python</span>
@@ -212,12 +254,11 @@
 
           <!-- Card 1: EMR 심혈관 -->
           <div class="work-card">
-            <div class="work-card-icon">❤️</div>
             <div class="work-card-title">대규모 EMR 데이터 기반 심혈관질환 예측 연구</div>
             <ul class="work-card-list">
-              <li>약 57만 건 심장내과 환자 EMR DB에서 과제별 조건에 맞는 데이터를 추출/통합하여 AI 학습용 DB 구축 및 관리. 비정형 데이터 전처리 후 전문의 검증 기반 정형화</li>
+              <li>2000~2016년 약 57만 건 심장내과 환자 EMR DB에서 과제별 조건에 맞는 데이터를 추출/통합하여 AI 학습용 DB 구축 및 관리. 환자 정보/진단/수술/약물 코드 파편화를 정리하고, 비정형 임상 노트는 NLP로 추출 및 비식별화한 뒤 전문의 검증 기반으로 정형화</li>
               <li>스타틴 치료 환자군 장기 추적 코호트 outcome 발생률을 분석한 RWE 기반 후향적 코호트 연구 데이터셋 구축
-                <em style="font-size:0.75rem;display:block;margin-top:0.2rem;color:#9ca3af;">(Kwon et al., Cardiovascular Drugs and Therapy, 2021)</em>
+                <em style="font-size:0.75rem;display:block;margin-top:0.2rem;color:#9ca3af;">(Kwon et al., Cardiovascular Event Rates in Statin-Treated Korean Patients with Cardiovascular Disease, Cardiovascular Drugs and Therapy, 2021)</em>
               </li>
             </ul>
             <div class="work-card-tags">
@@ -230,8 +271,7 @@
 
           <!-- Card 2: 중이염 딥러닝 -->
           <div class="work-card">
-            <div class="work-card-icon">🔬</div>
-            <div class="work-card-title">딥러닝 기반 중이염 Multi-classification AI 모델 개발</div>
+            <div class="work-card-title"><a class="work-link" href="projects/tympanic-membrane.html">딥러닝 기반 중이염 Multi-classification AI 모델 개발</a></div>
             <ul class="work-card-list">
               <li>이비인후과 내시경 이미지 7,156건 기반 중이염 1차/2차 질환 다중 분류 AI 모델 개발</li>
               <li>VGG16/ResNet/DenseNet/EfficientNet 앙상블 구조로 분류 정확도 95.8% 달성, 언더샘플링 + 데이터 증강(flip/rotation/shift)으로 클래스 불균형 최적화</li>
@@ -265,11 +305,12 @@
         <div class="work-grid">
 
           <div class="work-card span-2">
-            <div class="work-card-icon">🎓</div>
             <div class="work-card-title">연구 과제 기획 및 ML 기술 개발</div>
             <ul class="work-card-list">
-              <li>과제 기획 및 PM, ML 기술 개발 수행</li>
-              <li>국내외 학술대회 논문 작성 및 특허 등록/출원</li>
+              <li>과제 기획 및 PM, Random Forest 기반 변수 중요도(feature importance) 측정 방법 연구</li>
+              <li>국내외 학술대회 논문 작성 및 특허 등록/출원
+                <em style="font-size:0.75rem;display:block;margin-top:0.2rem;color:#9ca3af;">(Hur et al., A Variable Impacts Measurement in Random Forest for Mobile Cloud Computing, Wireless Communications and Mobile Computing, 2017)</em>
+              </li>
             </ul>
             <div class="work-card-tags">
               <span class="tag">Python</span>
@@ -283,6 +324,58 @@
     </div>
 
   </div><!-- /career-timeline -->
+
+  <div class="section-header" style="margin-top:1rem;">
+    <span class="section-title">Education</span>
+    <div class="section-line"></div>
+  </div>
+  <div class="edu-list">
+    <div class="edu-item">
+      <div class="edu-period">2015.03 ~ 2017.02</div>
+      <div>
+        <div class="edu-school">숙명여자대학교 대학원</div>
+        <div class="edu-detail">IT공학 석사 (Data Science) / GPA 4.43 / 4.5</div>
+      </div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-period">2009.03 ~ 2015.02</div>
+      <div>
+        <div class="edu-school">동국대학교</div>
+        <div class="edu-detail">국제통상학, 광고홍보학 복수전공 / GPA 3.93 / 4.5</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-header">
+    <span class="section-title">Skills</span>
+    <div class="section-line"></div>
+  </div>
+  <div class="skill-table">
+    <div class="skill-row">
+      <div class="skill-cat">LLM / Agent</div>
+      <div class="skill-items">LangChain, LangGraph, RAG, Multi-agent orchestration, 로컬/온프레미스 LLM (Ollama)</div>
+    </div>
+    <div class="skill-row">
+      <div class="skill-cat">Data Platform</div>
+      <div class="skill-items">GCP (BigQuery, Vertex AI, Cloud Run), AWS (EC2, Bedrock), Dataiku, Snowflake, PySpark</div>
+    </div>
+    <div class="skill-row">
+      <div class="skill-cat">ML / Engineering</div>
+      <div class="skill-items">Python, SQL (MySQL), PyTorch, Keras, Scikit-learn, LightGBM, REST API, GitLab CI/CD, PyInstaller</div>
+    </div>
+    <div class="skill-row">
+      <div class="skill-cat">Dashboard / App</div>
+      <div class="skill-items">Plotly/Dash, Streamlit, Flask</div>
+    </div>
+    <div class="skill-row">
+      <div class="skill-cat">Certifications</div>
+      <div class="skill-items">AICE Associate, ADsP (데이터분석 준전문가)</div>
+    </div>
+    <div class="skill-row">
+      <div class="skill-cat">Languages</div>
+      <div class="skill-items">한국어 (모국어), 영어 (중급), 프랑스어 (DELF B1)</div>
+    </div>
+  </div>
 </div><!-- /career-wrap -->
 
 <footer>
