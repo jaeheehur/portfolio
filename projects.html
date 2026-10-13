@@ -15,10 +15,20 @@
   <div class="nav-links">
     <a href="career.html">Career</a>
     <a href="projects.html" class="active">Projects</a>
+    <a href="index.html#publications">Publications</a>
   </div>
 </nav>
 
 <section class="section" style="padding-top: 3.5rem;">
+  <div class="filter-bar" role="group" aria-label="프로젝트 분야 필터">
+    <button class="filter-btn active" data-filter="all">전체</button>
+    <button class="filter-btn" data-filter="llm">LLM/Agent</button>
+    <button class="filter-btn" data-filter="quality">품질/규제</button>
+    <button class="filter-btn" data-filter="forecast">예측/최적화</button>
+    <button class="filter-btn" data-filter="bio">바이오/의료</button>
+  </div>
+
+  <div class="filter-group">
   <div class="section-header">
     <span class="section-title">Featured Projects</span>
     <div class="section-line"></div>
@@ -26,7 +36,7 @@
 
   <div class="featured-grid">
 
-    <a class="featured-card" href="projects/company-rnd-portfolio-intelligence-agent.html">
+    <a class="featured-card" href="projects/company-rnd-portfolio-intelligence-agent.html" data-category="llm">
       <div class="card-thumb">🕵️</div>
       <div class="card-body">
         <p class="card-label">LG화학 / 2026</p>
@@ -44,7 +54,7 @@
       </div>
     </a>
 
-    <a class="featured-card" href="projects/hplc-audit-trail.html">
+    <a class="featured-card" href="projects/hplc-audit-trail.html" data-category="quality">
       <div class="card-thumb">📋</div>
       <div class="card-body">
         <p class="card-label">LG화학 / 2025</p>
@@ -62,7 +72,9 @@
     </a>
 
   </div>
+  </div>
 
+  <div class="filter-group">
   <div class="section-header">
     <span class="section-title">Other Projects</span>
     <div class="section-line"></div>
@@ -70,7 +82,7 @@
 
   <div class="other-grid">
 
-    <a class="other-card" href="projects/materials-discovery.html">
+    <a class="other-card" href="projects/materials-discovery.html" data-category="llm">
       <div class="other-card-top">
         <span class="other-card-icon">🔬</span>
         <span class="icon-link">↗</span>
@@ -87,7 +99,7 @@
       </div>
     </a>
 
-    <a class="other-card" href="projects/ivf-prediction.html">
+    <a class="other-card" href="projects/ivf-prediction.html" data-category="bio">
       <div class="other-card-top">
         <span class="other-card-icon">🏥</span>
         <span class="icon-link">↗</span>
@@ -103,7 +115,7 @@
       </div>
     </a>
 
-    <a class="other-card" href="projects/cp-expense-audit.html">
+    <a class="other-card" href="projects/cp-expense-audit.html" data-category="quality">
       <div class="other-card-top">
         <span class="other-card-icon">💼</span>
         <span class="icon-link">↗</span>
@@ -119,7 +131,7 @@
       </div>
     </a>
 
-    <a class="other-card" href="projects/pharmacovigilance.html">
+    <a class="other-card" href="projects/pharmacovigilance.html" data-category="quality">
       <div class="other-card-top">
         <span class="other-card-icon">💊</span>
         <span class="icon-link">↗</span>
@@ -135,7 +147,7 @@
       </div>
     </a>
 
-    <a class="other-card" href="projects/splicing-prediction.html">
+    <a class="other-card" href="projects/splicing-prediction.html" data-category="bio">
       <div class="other-card-top">
         <span class="other-card-icon">🧬</span>
         <span class="icon-link">↗</span>
@@ -151,7 +163,7 @@
       </div>
     </a>
 
-    <a class="other-card" href="projects/reagent-usage-prediction.html">
+    <a class="other-card" href="projects/reagent-usage-prediction.html" data-category="forecast">
       <div class="other-card-top">
         <span class="other-card-icon">🧪</span>
         <span class="icon-link">↗</span>
@@ -167,7 +179,7 @@
       </div>
     </a>
 
-    <a class="other-card" href="projects/macroeconomic-forecasting.html">
+    <a class="other-card" href="projects/macroeconomic-forecasting.html" data-category="forecast">
       <div class="other-card-top">
         <span class="other-card-icon">📈</span>
         <span class="icon-link">↗</span>
@@ -183,7 +195,7 @@
       </div>
     </a>
 
-    <a class="other-card" href="projects/targetwiki.html">
+    <a class="other-card" href="projects/targetwiki.html" data-category="bio">
       <div class="other-card-top">
         <span class="other-card-icon">🎯</span>
         <span class="icon-link">↗</span>
@@ -199,7 +211,7 @@
       </div>
     </a>
 
-    <a class="other-card" href="projects/customer-complaint-platform.html">
+    <a class="other-card" href="projects/customer-complaint-platform.html" data-category="quality">
       <div class="other-card-top">
         <span class="other-card-icon">📣</span>
         <span class="icon-link">↗</span>
@@ -215,7 +227,7 @@
       </div>
     </a>
 
-    <a class="other-card" href="projects/tympanic-membrane.html">
+    <a class="other-card" href="projects/tympanic-membrane.html" data-category="bio">
       <div class="other-card-top">
         <span class="other-card-icon">👂</span>
         <span class="icon-link">↗</span>
@@ -232,7 +244,36 @@
     </a>
 
   </div>
+  </div>
+
+  <p class="filter-empty" hidden>이 분야의 프로젝트가 없습니다.</p>
 </section>
+
+<script>
+  (function () {
+    var buttons = document.querySelectorAll('.filter-btn');
+    var groups = document.querySelectorAll('.filter-group');
+    var empty = document.querySelector('.filter-empty');
+    buttons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var f = btn.getAttribute('data-filter');
+        buttons.forEach(function (b) { b.classList.toggle('active', b === btn); });
+        var shownTotal = 0;
+        groups.forEach(function (g) {
+          var shown = 0;
+          g.querySelectorAll('[data-category]').forEach(function (card) {
+            var match = f === 'all' || card.getAttribute('data-category') === f;
+            card.hidden = !match;
+            if (match) shown++;
+          });
+          g.hidden = shown === 0;
+          shownTotal += shown;
+        });
+        empty.hidden = shownTotal !== 0;
+      });
+    });
+  })();
+</script>
 
 <footer>
   <p>Jaehee Hur © 2026 / jaeheehur02@gmail.com</p>

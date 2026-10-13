@@ -15,6 +15,7 @@
   <div class="nav-links">
     <a href="career.html">Career</a>
     <a href="projects.html">Projects</a>
+    <a href="index.html#publications">Publications</a>
   </div>
 </nav>
 
@@ -23,15 +24,39 @@
   <p class="hero-eyebrow">Hello, I'm</p>
   <h1>Jaehee Hur<br /><em>Senior Data Scientist</em></h1>
   <p class="hero-desc">
-    Multi-agent LLM 오케스트레이션, 문헌 정보화, 규제 컴플라이언스 자동화 중심으로 AX 과제를 개발합니다.
+    의료 데이터 분석 연구에서 출발해, 제약/화학 현업의 품질/규제/R&amp;D 업무를 데이터와 LLM으로 자동화해 왔습니다.
+    지금은 Multi-agent LLM 오케스트레이션, 문헌 정보화, 규제 컴플라이언스 자동화 중심으로 AX 과제를 개발합니다.
   </p>
   <div class="hero-links">
     <a class="btn btn-primary" href="projects.html">View Projects</a>
+    <a class="btn btn-ghost" href="static/files/Jaehee_Hur_CV.pdf" target="_blank" rel="noopener">이력서 PDF ↗</a>
+    <a class="btn btn-ghost" href="https://github.com/jaeheehur" target="_blank" rel="noopener">GitHub ↗</a>
     <a class="btn btn-ghost" href="mailto:jaeheehur02@gmail.com">Contact ↗</a>
   </div>
 </section>
 
-<!-- PROJECTS (same layout as projects.html) -->
+<!-- IMPACT -->
+<section class="section section-tight">
+  <div class="stat-grid">
+    <a class="stat-card" href="projects/hplc-audit-trail.html">
+      <div class="stat-number">23h → 3h</div>
+      <div class="stat-label">장비당 Audit Trail 점검 시간</div>
+    </a>
+    <a class="stat-card" href="projects/cp-expense-audit.html">
+      <div class="stat-number">100%</div>
+      <div class="stat-label">월 3,500건+ 지출 사후점검 커버리지</div>
+    </a>
+    <a class="stat-card" href="projects/targetwiki.html">
+      <div class="stat-number">87%</div>
+      <div class="stat-label">타겟 검증 리서치 시간 단축</div>
+    </a>
+    <a class="stat-card" href="projects/tympanic-membrane.html">
+      <div class="stat-number">95.8%</div>
+      <div class="stat-label">고막 이미지 다중 분류 정확도</div>
+    </a>
+  </div>
+</section>
+
 <section class="section">
   <div class="section-header">
     <span class="section-title">Featured Projects</span>
@@ -40,7 +65,7 @@
 
   <div class="featured-grid">
 
-    <a class="featured-card" href="projects/company-rnd-portfolio-intelligence-agent.html">
+    <a class="featured-card" href="projects/company-rnd-portfolio-intelligence-agent.html" data-category="llm">
       <div class="card-thumb">🕵️</div>
       <div class="card-body">
         <p class="card-label">LG화학 / 2026</p>
@@ -58,7 +83,7 @@
       </div>
     </a>
 
-    <a class="featured-card" href="projects/hplc-audit-trail.html">
+    <a class="featured-card" href="projects/hplc-audit-trail.html" data-category="quality">
       <div class="card-thumb">📋</div>
       <div class="card-body">
         <p class="card-label">LG화학 / 2025</p>
@@ -78,46 +103,13 @@
   </div>
 
   <div class="section-header">
-    <span class="section-title">Other Projects</span>
+    <span class="section-title">Selected Projects</span>
     <div class="section-line"></div>
   </div>
 
   <div class="other-grid">
 
-    <a class="other-card" href="projects/materials-discovery.html">
-      <div class="other-card-top">
-        <span class="other-card-icon">🔬</span>
-        <span class="icon-link">↗</span>
-      </div>
-      <p class="other-card-label">LG화학 / 2026</p>
-      <h3 class="other-card-title">Target Compound Literature Screening Platform</h3>
-      <p class="other-card-desc">특허/논문 자동 수집 + LLM 구조화 추출 + Text2SQL 챗봇으로 신소재 R&amp;D 문헌 탐색 자동화.</p>
-      <div class="tag-list">
-        <span class="tag">LLM</span>
-        <span class="tag">LangChain</span>
-        <span class="tag">Text2SQL</span>
-        <span class="tag">Data Extraction</span>
-        <span class="tag">Flask</span>
-      </div>
-    </a>
-
-    <a class="other-card" href="projects/ivf-prediction.html">
-      <div class="other-card-top">
-        <span class="other-card-icon">🏥</span>
-        <span class="icon-link">↗</span>
-      </div>
-      <p class="other-card-label">LG화학 / 2025</p>
-      <h3 class="other-card-title">IVF Live Birth Outcome Prediction</h3>
-      <p class="other-card-desc">HFEA 데이터셋 기반 IVF 생존 출생 예측 모델. LG Aimers 6회 해커톤(2,000+ 참가자) 기반 문제로 출제.</p>
-      <div class="tag-list">
-        <span class="tag">Python</span>
-        <span class="tag">Scikit-learn</span>
-        <span class="tag">LightGBM</span>
-        <span class="tag">Feature Engineering</span>
-      </div>
-    </a>
-
-    <a class="other-card" href="projects/cp-expense-audit.html">
+    <a class="other-card" href="projects/cp-expense-audit.html" data-category="quality">
       <div class="other-card-top">
         <span class="other-card-icon">💼</span>
         <span class="icon-link">↗</span>
@@ -133,7 +125,7 @@
       </div>
     </a>
 
-    <a class="other-card" href="projects/pharmacovigilance.html">
+    <a class="other-card" href="projects/pharmacovigilance.html" data-category="quality">
       <div class="other-card-top">
         <span class="other-card-icon">💊</span>
         <span class="icon-link">↗</span>
@@ -149,23 +141,7 @@
       </div>
     </a>
 
-    <a class="other-card" href="projects/splicing-prediction.html">
-      <div class="other-card-top">
-        <span class="other-card-icon">🧬</span>
-        <span class="icon-link">↗</span>
-      </div>
-      <p class="other-card-label">LG화학 / 2024</p>
-      <h3 class="other-card-title">Splicing Site Prediction AI Platform</h3>
-      <p class="other-card-desc">신약 개발 초기 단계 Splicing 변이 조기 식별 AI 플랫폼. 후보 물질 선별 리스크를 사전에 감지.</p>
-      <div class="tag-list">
-        <span class="tag">Deep Learning</span>
-        <span class="tag">PyTorch</span>
-        <span class="tag">Bioinformatics</span>
-        <span class="tag">Plotly/Dash</span>
-      </div>
-    </a>
-
-    <a class="other-card" href="projects/reagent-usage-prediction.html">
+    <a class="other-card" href="projects/reagent-usage-prediction.html" data-category="forecast">
       <div class="other-card-top">
         <span class="other-card-icon">🧪</span>
         <span class="icon-link">↗</span>
@@ -181,7 +157,7 @@
       </div>
     </a>
 
-    <a class="other-card" href="projects/macroeconomic-forecasting.html">
+    <a class="other-card" href="projects/macroeconomic-forecasting.html" data-category="forecast">
       <div class="other-card-top">
         <span class="other-card-icon">📈</span>
         <span class="icon-link">↗</span>
@@ -197,7 +173,7 @@
       </div>
     </a>
 
-    <a class="other-card" href="projects/targetwiki.html">
+    <a class="other-card" href="projects/targetwiki.html" data-category="bio">
       <div class="other-card-top">
         <span class="other-card-icon">🎯</span>
         <span class="icon-link">↗</span>
@@ -213,23 +189,7 @@
       </div>
     </a>
 
-    <a class="other-card" href="projects/customer-complaint-platform.html">
-      <div class="other-card-top">
-        <span class="other-card-icon">📣</span>
-        <span class="icon-link">↗</span>
-      </div>
-      <p class="other-card-label">LG화학 / 2022</p>
-      <h3 class="other-card-title">고객불만 통합 관리 모니터링 플랫폼</h3>
-      <p class="other-card-desc">공장별 분산 고객불만 데이터를 전사 통합. AI 자동 분류 + KPI 대시보드로 수동 분류 작업 제거.</p>
-      <div class="tag-list">
-        <span class="tag">NLP</span>
-        <span class="tag">Text Classification</span>
-        <span class="tag">Plotly/Dash</span>
-        <span class="tag">Python</span>
-      </div>
-    </a>
-
-    <a class="other-card" href="projects/tympanic-membrane.html">
+    <a class="other-card" href="projects/tympanic-membrane.html" data-category="bio">
       <div class="other-card-top">
         <span class="other-card-icon">👂</span>
         <span class="icon-link">↗</span>
@@ -246,6 +206,70 @@
     </a>
 
   </div>
+
+  <div class="more-row">
+    <a class="btn btn-ghost" href="projects.html">전체 프로젝트 12개 보기 →</a>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-header" id="publications">
+    <span class="section-title">Publications</span>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="pub-list">
+    <a class="pub-item" href="projects/tympanic-membrane.html">
+      <div class="pub-year">2022</div>
+      <div class="pub-body">
+        <div class="pub-title">Automated multi-class classification for prediction of tympanic membrane changes with deep learning models</div>
+        <div class="pub-meta">Choi Y., Chae J., Park K., <strong>Hur J.</strong>, Kweon J., Ahn J. / <em>PLOS ONE (SCIE)</em></div>
+      </div>
+    </a>
+    <a class="pub-item" href="career.html">
+      <div class="pub-year">2021</div>
+      <div class="pub-body">
+        <div class="pub-title">Kwon et al., Cardiovascular Drugs and Therapy</div>
+        <div class="pub-meta">스타틴 치료 환자군 장기 추적 RWE 코호트 연구, 데이터셋 구축 담당</div>
+      </div>
+    </a>
+  </div>
+
+  <div class="section-header">
+    <span class="section-title">Talks &amp; Recognition</span>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="pub-list">
+    <a class="pub-item" href="projects/ivf-prediction.html">
+      <div class="pub-year">Talk</div>
+      <div class="pub-body">
+        <div class="pub-title">FAME 2025 학술회의 발표</div>
+        <div class="pub-meta">IVF 생존 출생 예측 모델, 150+ 의사 참석자 대상</div>
+      </div>
+    </a>
+    <a class="pub-item" href="projects/ivf-prediction.html">
+      <div class="pub-year">Hackathon</div>
+      <div class="pub-body">
+        <div class="pub-title">LG Aimers 6회 해커톤 출제 및 심사</div>
+        <div class="pub-meta">LG AI Research 협력, 참가자 2,000+ / 결선 27팀</div>
+      </div>
+    </a>
+    <a class="pub-item" href="projects/macroeconomic-forecasting.html">
+      <div class="pub-year">Award</div>
+      <div class="pub-body">
+        <div class="pub-title">사내 AX Best Practice 수상</div>
+        <div class="pub-meta">거시경제 가격 예측 및 시나리오 최적화 플랫폼</div>
+      </div>
+    </a>
+    <a class="pub-item" href="projects/reagent-usage-prediction.html">
+      <div class="pub-year">Award</div>
+      <div class="pub-body">
+        <div class="pub-title">Quality Division 우수 AX Practice 선정</div>
+        <div class="pub-meta">시약 사용량 예측 AI, 3개 플랜트 확대 적용</div>
+      </div>
+    </a>
+  </div>
 </section>
 
 <footer>
@@ -254,4 +278,3 @@
 
 </body>
 </html>
-

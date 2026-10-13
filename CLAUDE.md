@@ -26,7 +26,12 @@ Section titles are in English. Body text is in Korean. Pages use `<html lang="ko
 - Team names: `LG화학 AX기술개발팀` from 2026.01, `LG화학 생명과학/경영혁신/AX팀` for 2022.06 ~ 2025.12.
 - A number or claim that appears on a card, a detail page, and `career.html` must match in all three places.
 - Tag spelling: `LangChain`, `Plotly/Dash`, `Scikit-learn`, `Data Extraction`.
-- `index.html` and `projects.html` share the same card grids; change both together.
+- `index.html` and `projects.html` share the same card data; change both together.
+
+## Landing and list pages
+- `index.html` is the landing page: hero (projects, CV PDF, GitHub, contact links), 4 impact stats, Featured Projects, 6 Selected Projects, Publications (`#publications`), Talks & Recognition.
+- `projects.html` lists every project with a category filter. Each card carries `data-category` set to one of `llm`, `quality`, `forecast`, `bio`.
+- Every page's nav has Career, Projects, Publications.
 - R&D Planning Agent: detailed results are on hold until the project is reworked. Don't add numbers for it.
 
 ## Footer
