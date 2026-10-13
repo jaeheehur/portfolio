@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" font-family="'Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fffbeb"/>
+      <stop offset="1" stop-color="#fef3c7"/>
+    </linearGradient>
+    <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.4" fill="#92400e" fill-opacity="0.08"/>
+    </pattern>
+  </defs>
+  <rect width="640" height="360" fill="url(#bg)"/>
+  <rect width="640" height="360" fill="url(#dots)"/>
+  <circle cx="600" cy="40" r="120" fill="#fde68a" fill-opacity="0.35"/>
+  <text x="40" y="58" font-size="14" font-weight="700" letter-spacing="2.2" fill="#92400e">FORECAST / OPTIMIZATION</text>
+  <text x="40" y="150" font-size="64" font-weight="700" letter-spacing="-1.5" fill="#92400e">약 250h</text>
+  <text x="42" y="196" font-size="19" font-weight="500" fill="#92400e" fill-opacity="0.78">연간 수작업 데이터 수집 절감</text>
+  <rect x="40.0" y="262" width="120.5" height="52" rx="10" fill="#ffffff" stroke="#fde68a" stroke-width="1.5"/><text x="100.2" y="293.0" text-anchor="middle" font-size="15" font-weight="600" fill="#92400e">CEIC</text><path d="M166.5 288.0 h10 m-6 -5 l6 5 l-6 5" fill="none" stroke="#92400e" stroke-opacity="0.55" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="186.5" y="262" width="120.5" height="52" rx="10" fill="#ffffff" stroke="#fde68a" stroke-width="1.5"/><text x="246.8" y="293.0" text-anchor="middle" font-size="15" font-weight="600" fill="#92400e">15y DB</text><path d="M313.0 288.0 h10 m-6 -5 l6 5 l-6 5" fill="none" stroke="#92400e" stroke-opacity="0.55" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="333.0" y="262" width="120.5" height="52" rx="10" fill="#ffffff" stroke="#fde68a" stroke-width="1.5"/><text x="393.2" y="293.0" text-anchor="middle" font-size="15" font-weight="600" fill="#92400e">Backtest</text><path d="M459.5 288.0 h10 m-6 -5 l6 5 l-6 5" fill="none" stroke="#92400e" stroke-opacity="0.55" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="479.5" y="262" width="120.5" height="52" rx="10" fill="#ffffff" stroke="#fde68a" stroke-width="1.5"/><text x="539.8" y="293.0" text-anchor="middle" font-size="15" font-weight="600" fill="#92400e">SLSQP</text>
+</svg>

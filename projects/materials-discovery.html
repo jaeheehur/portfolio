@@ -4,6 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Target Compound Literature Screening Platform / Jaehee Hur</title>
+  <!-- SEO -->
+  <meta name="description" content="신소재 발굴을 위한 문헌 인텔리전스 파이프라인. 특허 DB와 학술 논문에서 키워드 기반 크롤링 및 API 수집을 수행하고, LLM이 물성/합성 조건/실험 방법을 구조화 테이블로 추출합니다. 연구자가 자연어로 데이터베이스를 조회할 수 있는 Text2SQL 챗봇을 함께 제공합니다." />
+  <meta name="theme-color" content="#1a6ef5" />
+  <link rel="icon" type="image/svg+xml" href="../static/images/favicon.svg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Target Compound Literature Screening Platform / Jaehee Hur" />
+  <meta property="og:description" content="신소재 발굴을 위한 문헌 인텔리전스 파이프라인. 특허 DB와 학술 논문에서 키워드 기반 크롤링 및 API 수집을 수행하고, LLM이 물성/합성 조건/실험 방법을 구조화 테이블로 추출합니다. 연구자가 자연어로 데이터베이스를 조회할 수 있는 Text2SQL 챗봇을 함께 제공합니다." />
+  <meta property="og:url" content="https://jaeheehur.github.io/portfolio/projects/materials-discovery.html" />
+  <meta property="og:image" content="https://jaeheehur.github.io/portfolio/static/images/og.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <!-- /SEO -->
   <link rel="stylesheet" href="../static/css/style.css" />
   <link rel="stylesheet" href="../static/css/project-detail.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -72,7 +83,7 @@
     <div class="flow-step">
       <div class="flow-num">03</div>
       <div class="flow-title">LLM 구조화 추출</div>
-      <div class="flow-desc">물성/합성 조건/실험 방법 추출</div>
+      <div class="flow-desc">물성/합성 조건/열 안정성 지표 추출</div>
     </div>
     <div class="flow-arrow"></div>
     <div class="flow-step">
@@ -92,6 +103,7 @@
   <div class="project-body">
     <p>
       연구자가 신소재 후보를 탐색하려면 특허와 논문을 수동으로 검색하고 정리해야 해서 많은 시간이 들었습니다. 키워드 검색만으로는 표현이 다른 문헌을 놓치기 쉬웠고, 정리된 결과를 다시 조회하려면 SQL 지식이 필요했습니다.
+      회사 차원에서는 소재 개발 주기를 36개월에서 12개월 이내로 줄이는 것을 목표로 하고 있어, 문헌 탐색 단계부터 속도를 높일 필요가 있었습니다.
     </p>
   </div>
 
@@ -101,7 +113,7 @@
       <b>검색 커버리지 확대:</b> LLM이 생성한 확장 특허 검색 쿼리를 활용해 키워드 기반 검색의 커버리지를 높였습니다.
     </p>
     <p>
-      <b>구조화 추출:</b> 수집된 문헌에서 물성, 합성 조건, 실험 방법 등 핵심 정보를 LLM으로 자동 추출하여 구조화된 DB로 적재합니다.
+      <b>구조화 추출:</b> 수집된 문헌에서 물성, 합성 조건, 실험 방법, 열 안정성 지표 등 핵심 정보를 LLM으로 자동 추출하여 구조화된 DB로 적재합니다.
     </p>
     <p>
       <b>Text2SQL 챗봇:</b> 결과 DB에 자연어로 질의할 수 있는 챗봇을 제공해 연구자가 SQL 없이도 "100도 이상 온도 범위에서 합성된 분자량 200 이상의 화합물"과 같은 쿼리를 직접 실행할 수 있도록 했습니다.
@@ -113,6 +125,18 @@
     <li>수동 문헌 탐색 시간 절감, R&amp;D 워크플로우 가속화</li>
     <li>LLM 챗봇으로 자연어 쿼리를 통한 유연한 DB 검색 기능 확대</li>
   </ul>
+
+
+  <div class="project-pager" role="navigation" aria-label="프로젝트 이동">
+    <a class="pager-link prev" href="hplc-audit-trail.html">
+      <span class="pager-dir">← 이전 프로젝트</span>
+      <span class="pager-title">HPLC Audit Trail Monitoring Platform</span>
+    </a>
+    <a class="pager-link next" href="ivf-prediction.html">
+      <span class="pager-dir">다음 프로젝트 →</span>
+      <span class="pager-title">IVF Live Birth Outcome Prediction Model</span>
+    </a>
+  </div>
 
 </article>
 

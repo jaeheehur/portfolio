@@ -19,6 +19,7 @@ Every page uses the same structure, in this order:
 6. `Solution` (or the page's own architecture sections)
 7. Page-specific extras (visualizations, publication, and so on)
 8. `Key Achievements` as a `ul.achievement-list`
+9. `div.project-pager` (role="navigation"; not a `<nav>`, which gets the sticky site-header style): previous/next project links, in the same order as `projects.html`. Update the neighbours when a project is added, removed, or reordered.
 
 Section titles are in English. Body text is in Korean. Pages use `<html lang="ko">`.
 
@@ -32,6 +33,14 @@ Section titles are in English. Body text is in Korean. Pages use `<html lang="ko
 - `index.html` is the landing page: hero (projects, CV PDF, GitHub, contact links), 4 impact stats, Featured Projects, 6 Selected Projects, Publications (`#publications`), Talks & Recognition.
 - `projects.html` lists every project with a category filter. Each card carries `data-category` set to one of `llm`, `quality`, `forecast`, `bio`.
 - Every page's nav has Career, Projects, Publications.
+- Every card shows its cover from `static/images/covers/<slug>.svg` (16:9). A cover has the category label, one headline figure with a short caption, and a 4-step pipeline. Category colors: `llm` indigo, `quality` green, `forecast` amber, `bio` rose. The headline figure must match the project page.
+- `career.html` links each project name to its detail page and ends with Education and Skills.
+
+## Head tags
+Every page carries the `<!-- SEO -->` block: description, theme color, SVG favicon, Open Graph tags with `static/images/og.png`. Detail pages use their `.project-detail-desc` as the description.
+
+## Sources
+The CV at `static/files/Jaehee_Hur_CV.pdf` is the source for publications, education, skills, and deployment facts. Where the CV and these rules disagree (team names, R&D Planning Agent results), these rules win.
 - R&D Planning Agent: detailed results are on hold until the project is reworked. Don't add numbers for it.
 
 ## Footer
