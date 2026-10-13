@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ko">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Company R&D Portfolio Intelligence Agent  — Jaehee Hur</title>
+  <title>R&amp;D Planning Agent / Jaehee Hur</title>
   <link rel="stylesheet" href="../static/css/style.css" />
   <link rel="stylesheet" href="../static/css/project-detail.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -24,15 +24,15 @@
   <a class="project-back" href="../projects.html">← Back to Projects</a>
 
   <div class="project-meta">
-    <span class="project-meta-label">Featured · LG Chem AX Technology Development Team · Apr. 2026 – Present</span>
+    <span class="project-meta-label">LG화학 AX기술개발팀</span>
+    <span class="project-meta-label">2026.04 ~ 현재</span>
   </div>
 
-  <h1>Company R&D Portfolio Intelligence Agent</h1>
+  <h1>R&amp;D Planning Agent</h1>
 
   <p class="project-detail-desc">
-    타겟 기업의 기술 포트폴리오 분석을 수행하는 멀티 에이전트 LangGraph 파이프라인. 
-    재무제표·특허·뉴스 데이터를 통합하여 구조화된 인텔리전스 리포트를 자동으로 생성합니다. (소요 시간: 10분 이내)
-    전사 배포 후 첫 달 800건 이상의 리포트가 생성되었으며, 일평균 20-30건의 리포트를 꾸준히 배포하고 있습니다.
+    R&amp;D Planning을 위해 타겟 기업의 기술 포트폴리오 분석을 수행하는 멀티 에이전트 LangGraph 파이프라인.
+    재무제표/특허/뉴스 데이터를 통합하여 구조화된 인텔리전스 리포트를 자동으로 생성합니다.
   </p>
 
   <div class="skills-section">
@@ -51,11 +51,50 @@
     </div>
   </div>
 
-  <p class="project-section-title">Background</p>
+  <p class="project-section-title">Overview</p>
+  <div class="project-body">
+    <p>
+      사용자가 기업명과 기술명을 입력하면 대상 기업을 확정하고, 검색 키워드를 만든 뒤 뉴스/특허/재무 에이전트가 병렬로 데이터를 수집하고,
+      LangGraph 그래프에서 챕터별 생성과 검토를 반복해 Executive Summary가 포함된 리포트를 완성하는 구조입니다.
+    </p>
+  </div>
+  <div class="flow">
+    <div class="flow-step">
+      <div class="flow-num">01</div>
+      <div class="flow-title">입력/기업 확정</div>
+      <div class="flow-desc">사업 분야, 기업명, 기술명 입력 후 LLM 후보 중 대상 기업 확정</div>
+    </div>
+    <div class="flow-arrow"></div>
+    <div class="flow-step">
+      <div class="flow-num">02</div>
+      <div class="flow-title">키워드 생성</div>
+      <div class="flow-desc">다국어 키워드와 특허 어휘로 검색어 확장</div>
+    </div>
+    <div class="flow-arrow"></div>
+    <div class="flow-step">
+      <div class="flow-num">03</div>
+      <div class="flow-title">멀티소스 수집</div>
+      <div class="flow-desc">News/IP/Finance 에이전트 병렬 수집</div>
+    </div>
+    <div class="flow-arrow"></div>
+    <div class="flow-step">
+      <div class="flow-num">04</div>
+      <div class="flow-title">챕터 생성/검토</div>
+      <div class="flow-desc">기업 개요, 산업 동향, 기술 평가를 생성하고 PASS/FAIL 검토 반복</div>
+    </div>
+    <div class="flow-arrow"></div>
+    <div class="flow-step">
+      <div class="flow-num">05</div>
+      <div class="flow-title">최종 리포트</div>
+      <div class="flow-desc">Executive Summary 생성 및 출처 통합</div>
+    </div>
+  </div>
+
+  <p class="project-section-title">Problem</p>
   <div class="project-body">
     <p>
       수작업으로 기업 R&D 포트폴리오 리서치를 수행하고 완성된 리포트를 작성하기까지 건당 약 2주 이상이 소요되었습니다.
-      담당자마다 분석 수준의 편차 및 human-error가 발생할 수 있었고, 분산된 여러 소스를 수동으로 수집·정리하는 과정에서
+      담당자마다 분석 수준의 편차 및 human-error가 발생할 수 있었고, 분산된 여러 소스를 수동으로 수집/정리하는 과정에서
       비효율이 발생하여 업무 효율화를 위해 에이전트를 기획 개발하게 되었습니다.
     </p>
   </div>
@@ -67,8 +106,8 @@
 
     <div class="pipe-legend">
       <div class="pipe-legend-item"><div class="legend-dot user"></div>User Interaction</div>
-      <div class="pipe-legend-item"><div class="legend-dot llm"></div>LLM (추론·생성)</div>
-      <div class="pipe-legend-item"><div class="legend-dot agent"></div>Agent (툴 사용·오케스트레이션)</div>
+      <div class="pipe-legend-item"><div class="legend-dot llm"></div>LLM (추론/생성)</div>
+      <div class="pipe-legend-item"><div class="legend-dot agent"></div>Agent (툴 사용/오케스트레이션)</div>
     </div>
 
     <div class="pipe-track">
@@ -102,7 +141,7 @@
         <div class="pipe-detail">
           <b>기업 동정 및 후보 선별</b><br />
           동명의 여러 기업이 존재할 경우 <em>사업 분야 연관성 기준으로 자동 선택</em>하고,
-          관련 기업들을 인지도·관련성 순으로 순위화해 제공합니다.
+          관련 기업들을 인지도/관련성 순으로 순위화해 제공합니다.
         </div>
       </div>
 
@@ -134,8 +173,8 @@
         </div>
         <div class="pipe-detail">
           <b>핵심 키워드 20개 내외 생성</b><br />
-          확정 기업·기술명에 <em>연관된 검색 키워드를 자동 생성</em>합니다.
-          이후 뉴스·특허·재무 수집의 쿼리로 활용됩니다.
+          확정 기업/기술명에 <em>연관된 검색 키워드를 자동 생성</em>합니다.
+          이후 뉴스/특허/재무 수집의 쿼리로 활용됩니다.
         </div>
       </div>
 
@@ -154,18 +193,18 @@
           <div class="agent-grid">
             <div class="agent-cell">
               <div class="agent-cell-name">📰 News Agent</div>
-              <div class="agent-cell-desc">뉴스 검색 API로 최신·임팩트 순 뉴스 수집</div>
-              <span class="llm-chip">LLM — 시사점 요약</span>
+              <div class="agent-cell-desc">뉴스 검색 API로 최신/임팩트 순 뉴스 수집</div>
+              <span class="llm-chip">LLM: 시사점 요약</span>
             </div>
             <div class="agent-cell">
               <div class="agent-cell-name">🔬 IP Agent</div>
               <div class="agent-cell-desc">Patent DB 다국어/출원인/CPC 등 매칭 → Top 50 추출, TRL 추정</div>
-              <span class="llm-chip">LLM — 쿼리 생성 · TRL</span>
+              <span class="llm-chip">LLM: 쿼리 생성 / TRL</span>
             </div>
             <div class="agent-cell">
               <div class="agent-cell-name">💰 Finance Agent</div>
-              <div class="agent-cell-desc">재무 데이터 API로 5년치 재무·R&D 수집</div>
-              <span class="llm-chip">LLM — 타임라인 해석</span>
+              <div class="agent-cell-desc">재무 데이터 API로 5년치 재무/R&D 수집</div>
+              <span class="llm-chip">LLM: 타임라인 해석</span>
             </div>
           </div>
         </div>
@@ -183,7 +222,7 @@
         </div>
         <div class="pipe-detail">
           <b>품질 검토 → 구조화 리포트 자동 생성</b><br />
-          수집 데이터의 <em>관련성·신뢰도·중복을 자동 필터링</em>한 뒤
+          수집 데이터의 <em>관련성/신뢰도/중복을 자동 필터링</em>한 뒤
           기업 포트폴리오 분석 리포트를 생성합니다.
           <div class="report-chapters">
             <div class="report-ch">
@@ -194,12 +233,12 @@
             <div class="report-ch">
               <div class="report-ch-num">Ch. 2</div>
               <div class="report-ch-title">산업 동향</div>
-              <div class="report-ch-sub">뉴스·전략 분석</div>
+              <div class="report-ch-sub">뉴스/전략 분석</div>
             </div>
             <div class="report-ch">
               <div class="report-ch-num">Ch. 3</div>
               <div class="report-ch-title">기술 평가</div>
-              <div class="report-ch-sub">특허·R&D 현황</div>
+              <div class="report-ch-sub">특허/R&D 현황</div>
             </div>
           </div>
         </div>
@@ -237,19 +276,19 @@
       <div class="dir-row">
         <span class="dir-icon">📁</span>
         <span class="dir-name folder">prompt/</span>
-        <span class="dir-sep">—</span>
-        <span class="dir-role">에이전트별 시스템 프롬프트 · Few-shot 예시</span>
+        <span class="dir-sep">/</span>
+        <span class="dir-role">에이전트별 시스템 프롬프트 / Few-shot 예시</span>
       </div>
       <div class="dir-row">
         <span class="dir-icon">📁</span>
         <span class="dir-name folder">static/</span>
-        <span class="dir-sep">—</span>
-        <span class="dir-role">리포트 HTML · CSS 템플릿</span>
+        <span class="dir-sep">/</span>
+        <span class="dir-role">리포트 HTML / CSS 템플릿</span>
       </div>
       <div class="dir-row">
         <span class="dir-icon">📁</span>
         <span class="dir-name folder">output/</span>
-        <span class="dir-sep">—</span>
+        <span class="dir-sep">/</span>
         <span class="dir-role">생성 리포트 로컬 저장 → GCS 업로드</span>
       </div>
 
@@ -259,20 +298,20 @@
       <div class="dir-row">
         <span class="dir-icon">🟦</span>
         <span class="dir-name entry">app.py</span>
-        <span class="dir-sep">—</span>
+        <span class="dir-sep">/</span>
         <span class="dir-role">Web Entry Point (Flask)</span>
       </div>
       <div class="dir-row">
         <span class="dir-icon">🟧</span>
         <span class="dir-name core">orchestrator.py</span>
-        <span class="dir-sep">—</span>
-        <span class="dir-role">파이프라인 단계 조율 · 상태 관리</span>
+        <span class="dir-sep">/</span>
+        <span class="dir-role">파이프라인 단계 조율 / 상태 관리</span>
       </div>
       <div class="dir-row">
         <span class="dir-icon">🟧</span>
         <span class="dir-name core">agent.py</span>
-        <span class="dir-sep">—</span>
-        <span class="dir-role">LangGraph 에이전트 · 툴 바인딩</span>
+        <span class="dir-sep">/</span>
+        <span class="dir-role">LangGraph 에이전트 / 툴 바인딩</span>
       </div>
 
       <div class="dir-divider"></div>
@@ -281,26 +320,26 @@
       <div class="dir-row">
         <span class="dir-icon">🟩</span>
         <span class="dir-name client">finance-client.py</span>
-        <span class="dir-sep">—</span>
-        <span class="dir-role">재무제표 · 공시 수집</span>
+        <span class="dir-sep">/</span>
+        <span class="dir-role">재무제표 / 공시 수집</span>
       </div>
       <div class="dir-row">
         <span class="dir-icon">🟩</span>
         <span class="dir-name client">ip-client.py</span>
-        <span class="dir-sep">—</span>
-        <span class="dir-role">특허 DB 조회 · Text2SQL</span>
+        <span class="dir-sep">/</span>
+        <span class="dir-role">특허 DB 조회 / Text2SQL</span>
       </div>
       <div class="dir-row">
         <span class="dir-icon">🟩</span>
         <span class="dir-name client">dart-client.py</span>
-        <span class="dir-sep">—</span>
+        <span class="dir-sep">/</span>
         <span class="dir-role">국내 기업 공시 데이터 수집</span>
       </div>
       <div class="dir-row">
         <span class="dir-icon">🟩</span>
         <span class="dir-name client">news-client.py</span>
-        <span class="dir-sep">—</span>
-        <span class="dir-role">뉴스 검색 · 기사 수집</span>
+        <span class="dir-sep">/</span>
+        <span class="dir-role">뉴스 검색 / 기사 수집</span>
       </div>
     </div>
 
@@ -340,7 +379,7 @@
       <div class="orch-bottom">
         <div class="orch-node store" style="font-family:var(--font-mono); font-size:0.68rem;">📁 output/</div>
         <span class="orch-arrow-right">→</span>
-        <div class="orch-node infra" style="font-size:0.68rem;">☁️ GCS (Log · Report)</div>
+        <div class="orch-node infra" style="font-size:0.68rem;">☁️ GCS (Log / Report)</div>
       </div>
 
       <div style="height:0.8rem;"></div>
@@ -381,10 +420,10 @@
     <div class="project-body ocn-body">
       <p>체인으로 구현했을 경우와 비교해 3가지 이점이 존재함</p>
 
-      <p><b>① 정확성 — 호출부에서 잘못된 값이 전파되는 문제</b><br />
+      <p><b>① 정확성: 호출부에서 잘못된 값이 전파되는 문제</b><br />
       체인에서는 호출부가 <code>ch1</code>, <code>feedback</code>, <code>retries</code>를 변수로 들고 다니며 직접 인자로 넣어줘야 함. 재시도 분기를 빠뜨리거나 실수로 이전 값을 넘기면 <b>LLM은 오류 없이 실행되지만 틀린 컨텍스트로 챕터를 생성</b>하게 됨. 이런 버그는 출력 텍스트를 읽기 전까지 감지되지 못함.</p>
       <div class="ocn-code">
-        <span style="color:#94a3b8;"># 선형 체인 — ch2 재시도 중 ch1 최신값을 호출부가 보장해야 함</span><br />
+        <span style="color:#94a3b8;"># 선형 체인: ch2 재시도 중 ch1 최신값을 호출부가 보장해야 함</span><br />
         ch1 = generate_ch1(company)<br />
         ok1, feedback1 = review_ch1(ch1)<br />
         <b>if not ok1:<br />
@@ -397,13 +436,13 @@
       </div>
       <p>LangGraph에서는 <code>state["ch1"]</code>이 항상 마지막으로 쓰인 값이기 때문에 잘못된 값이 전달될 확률이 낮아짐.</p>
 
-      <p><b>② 확장성 — 필드 추가 시 모든 호출 지점을 수정해야 하는 문제</b><br />
+      <p><b>② 확장성: 필드 추가 시 모든 호출 지점을 수정해야 하는 문제</b><br />
       챕터가 늘어날 수록 체인의 호출부에 <code>chX, chX_ok, chX_feedback, chX_retries</code>가 챕터 수만큼 쌓이고, 필드 하나가 추가될 때마다 그 값을 받아서 넘기는 <b>모든 호출 지점을 찾아 수정</b>해야 함. LangGraph는 확장성에 있어서 용이함.</p>
 
-      <p><b>③ 관찰 가능성 — 중간 상태 스냅샷이 없는 문제</b><br />
+      <p><b>③ 관찰 가능성: 중간 상태 스냅샷이 없는 문제</b><br />
       선형 체인에서 실패하면 지역 변수는 마지막 값으로 덮어씌워지거나 사라짐. "ch1이 재시도됐는지, 피드백이 뭐였는지"를 사후에 알 수 없음. LangGraph는 실패 시점의 <code>AnalysisState</code> 전체가 구조화된 객체로 남아 디버깅이 용이함.</p>
       <div class="ocn-code">
-        <span style="color:#94a3b8;"># 실패 시점 상태 덤프 — 어느 노드에서 왜 멈췄는지 한눈에 파악</span><br />
+        <span style="color:#94a3b8;"># 실패 시점 상태 덤프: 어느 노드에서 왜 멈췄는지 한눈에 파악</span><br />
         {<br />
         &nbsp;&nbsp;"ch1": "...", &nbsp;"ch1_ok": False,<br />
         &nbsp;&nbsp;"ch1_feedback": "재무 수치 누락", &nbsp;"ch1_retries": 1,<br />
@@ -436,7 +475,7 @@
         </defs>
 
         <!-- ===== Pre-graph band (LangGraph 외부 / app.py) ===== -->
-        <text x="20" y="13" font-size="9.5" fill="#94a3b8">전처리 · 초기 State 준비 — LangGraph 외부 (app.py)</text>
+        <text x="20" y="13" font-size="9.5" fill="#94a3b8">전처리 / 초기 State 준비: LangGraph 외부 (app.py)</text>
 
         <line x1="170" y1="42" x2="192" y2="42" stroke="#94a3b8" stroke-width="1.3" marker-end="url(#ocn-ar)"/>
         <line x1="342" y1="42" x2="364" y2="42" stroke="#94a3b8" stroke-width="1.3" marker-end="url(#ocn-ar)"/>
@@ -446,7 +485,7 @@
         <!-- pre-graph nodes (dashed = not graph nodes) -->
         <rect x="20"  y="20" width="150" height="44" rx="3" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.4" stroke-dasharray="3 2"/>
         <text x="95"  y="40" text-anchor="middle" font-size="10" font-weight="600" fill="#334155">입력</text>
-        <text x="95"  y="54" text-anchor="middle" font-size="9" fill="#64748b">기업명 · 기술명</text>
+        <text x="95"  y="54" text-anchor="middle" font-size="9" fill="#64748b">기업명 / 기술명</text>
 
         <rect x="192" y="20" width="150" height="44" rx="3" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.4" stroke-dasharray="3 2"/>
         <text x="267" y="40" text-anchor="middle" font-size="10" font-weight="600" fill="#334155">개체 정규화</text>
@@ -458,7 +497,7 @@
 
         <rect x="536" y="20" width="150" height="44" rx="3" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.4" stroke-dasharray="3 2"/>
         <text x="611" y="40" text-anchor="middle" font-size="10" font-weight="600" fill="#334155">멀티소스 수집</text>
-        <text x="611" y="54" text-anchor="middle" font-size="8.5" fill="#64748b">재무·공시·뉴스·특허</text>
+        <text x="611" y="54" text-anchor="middle" font-size="8.5" fill="#64748b">재무/공시/뉴스/특허</text>
 
         <rect x="708" y="20" width="150" height="44" rx="3" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.4" stroke-dasharray="3 2"/>
         <text x="783" y="40" text-anchor="middle" font-size="10" font-weight="600" fill="#334155">초기 State 구성</text>
@@ -468,14 +507,14 @@
         <polyline points="783,64 783,88 120,88 120,110" fill="none" stroke="#6366f1" stroke-width="1.4" marker-end="url(#ocn-arH)"/>
         <text x="450" y="83" text-anchor="middle" font-size="8.5" fill="#6366f1">초기 State로 그래프 진입 (set_entry_point: generate_ch1)</text>
 
-        <!-- ===== LangGraph StateGraph — 3-row serpentine ===== -->
+        <!-- ===== LangGraph StateGraph, 3-row serpentine ===== -->
 
         <!-- Row 1 flow: g1 → r1 → g2 (left→right) -->
         <line x1="200" y1="137" x2="360" y2="137" stroke="#64748b" stroke-width="1.5" marker-end="url(#ocn-ar)"/>
         <line x1="520" y1="137" x2="680" y2="137" stroke="#64748b" stroke-width="1.5" marker-end="url(#ocn-ar)"/>
         <text x="600" y="129" text-anchor="middle" font-size="9" font-weight="600" fill="#16a34a">PASS</text>
 
-        <!-- wrap down: g2 → r2 (col3, normal flow — offset left) -->
+        <!-- wrap down: g2 → r2 (col3, normal flow, offset left) -->
         <line x1="748" y1="164" x2="748" y2="250" stroke="#64748b" stroke-width="1.5" marker-end="url(#ocn-ar)"/>
 
         <!-- Row 2 flow: r2 → g3 → r3 (right→left, edges touching) -->
@@ -483,7 +522,7 @@
         <line x1="360" y1="277" x2="200" y2="277" stroke="#64748b" stroke-width="1.5" marker-end="url(#ocn-ar)"/>
         <text x="600" y="269" text-anchor="middle" font-size="9" font-weight="600" fill="#16a34a">PASS</text>
 
-        <!-- wrap down: r3 → exec_summary (col1, normal flow — offset left) -->
+        <!-- wrap down: r3 → exec_summary (col1, normal flow, offset left) -->
         <line x1="108" y1="304" x2="108" y2="370" stroke="#64748b" stroke-width="1.5" marker-end="url(#ocn-ar)"/>
         <text x="104" y="343" text-anchor="end" font-size="9" font-weight="600" fill="#16a34a">PASS</text>
 
@@ -506,7 +545,7 @@
         <!-- Row 1 -->
         <rect x="40" y="110" width="160" height="54" rx="3" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.5"/>
         <text x="120" y="134" text-anchor="middle" font-size="10" font-weight="600" fill="#1e3a8a" font-family="ui-monospace, 'SF Mono', monospace">generate_ch1</text>
-        <text x="120" y="151" text-anchor="middle" font-size="9.5" fill="#475569">Ch1 초안·수정</text>
+        <text x="120" y="151" text-anchor="middle" font-size="9.5" fill="#475569">Ch1 초안/수정</text>
 
         <rect x="360" y="110" width="160" height="54" rx="3" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.5"/>
         <text x="440" y="134" text-anchor="middle" font-size="10" font-weight="600" fill="#92400e" font-family="ui-monospace, 'SF Mono', monospace">review_ch1</text>
@@ -514,7 +553,7 @@
 
         <rect x="680" y="110" width="160" height="54" rx="3" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.5"/>
         <text x="760" y="134" text-anchor="middle" font-size="10" font-weight="600" fill="#1e3a8a" font-family="ui-monospace, 'SF Mono', monospace">generate_ch2</text>
-        <text x="760" y="151" text-anchor="middle" font-size="9.5" fill="#475569">Ch2 초안·수정</text>
+        <text x="760" y="151" text-anchor="middle" font-size="9.5" fill="#475569">Ch2 초안/수정</text>
 
         <!-- Row 2 (serpentine: right→left) -->
         <rect x="680" y="250" width="160" height="54" rx="3" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.5"/>
@@ -523,7 +562,7 @@
 
         <rect x="360" y="250" width="160" height="54" rx="3" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.5"/>
         <text x="440" y="274" text-anchor="middle" font-size="10" font-weight="600" fill="#1e3a8a" font-family="ui-monospace, 'SF Mono', monospace">generate_ch3</text>
-        <text x="440" y="291" text-anchor="middle" font-size="9.5" fill="#475569">Ch3 · 특허 투입</text>
+        <text x="440" y="291" text-anchor="middle" font-size="9.5" fill="#475569">Ch3 / 특허 투입</text>
 
         <rect x="40" y="250" width="160" height="54" rx="3" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.5"/>
         <text x="120" y="274" text-anchor="middle" font-size="10" font-weight="600" fill="#92400e" font-family="ui-monospace, 'SF Mono', monospace">review_ch3</text>
@@ -551,44 +590,44 @@
         <tr>
           <td><code>generate_ch1</code><br /><span style="font-size:0.68rem;color:#94a3b8;">entry_point</span></td>
           <td class="ocn-type gen">Generate</td>
-          <td>Chapter 1 (Corporate &amp; Financial Overview) 초안·수정안 생성</td>
-          <td><code>analyst.generate_chapter1(company, is_subsidiary, parent_company_kr, feedback, …)</code> — 재시도 시 직전 <code>ch1_feedback</code> 주입</td>
+          <td>Chapter 1 (Corporate &amp; Financial Overview) 초안/수정안 생성</td>
+          <td><code>analyst.generate_chapter1(company, is_subsidiary, parent_company_kr, feedback, …)</code>: 재시도 시 직전 <code>ch1_feedback</code> 주입</td>
         </tr>
         <tr>
           <td><code>review_ch1</code></td>
           <td class="ocn-type rev">Review</td>
           <td>Ch1 품질 검토 → PASS/FAIL 판정 및 피드백 추출, 라우팅 결정</td>
-          <td><code>_extract_feedback()</code> (출력 앞 30자 내 "PASS" 검사) · <code>retries ≥ MAX_RETRIES</code>이면 강제 통과 · <code>_route_ch1</code></td>
+          <td><code>_extract_feedback()</code> (출력 앞 30자 내 "PASS" 검사) / <code>retries ≥ MAX_RETRIES</code>이면 강제 통과 / <code>_route_ch1</code></td>
         </tr>
         <tr>
           <td><code>generate_ch2</code></td>
           <td class="ocn-type gen">Generate</td>
-          <td>Chapter 2 (Sector Overview) 생성 — Ch1 결과를 문맥으로 사용</td>
+          <td>Chapter 2 (Sector Overview) 생성: Ch1 결과를 문맥으로 사용</td>
           <td><code>analyst.generate_chapter2(company, sector, technology, ch1, …)</code></td>
         </tr>
         <tr>
           <td><code>review_ch2</code></td>
           <td class="ocn-type rev">Review</td>
           <td>Ch2 품질 검토 (Ch1 문맥 + 재무 Fact-check)</td>
-          <td><code>analyst.review_chapter2(…)</code> · <code>_route_ch2</code></td>
+          <td><code>analyst.review_chapter2(…)</code> / <code>_route_ch2</code></td>
         </tr>
         <tr>
           <td><code>generate_ch3</code></td>
           <td class="ocn-type gen">Generate</td>
-          <td>Chapter 3 (Technology Deep Dive) 생성 — <b>patent_records 투입</b></td>
+          <td>Chapter 3 (Technology Deep Dive) 생성: <b>patent_records 투입</b></td>
           <td><code>analyst.generate_chapter3(company, sector, technology, ch1, ch2, patent_records, …)</code></td>
         </tr>
         <tr>
           <td><code>review_ch3</code></td>
           <td class="ocn-type rev">Review</td>
           <td>Ch3 품질 검토</td>
-          <td><code>analyst.review_chapter3(…)</code> · <code>_route_ch3</code></td>
+          <td><code>analyst.review_chapter3(…)</code> / <code>_route_ch3</code></td>
         </tr>
         <tr>
           <td><code>generate_exec_summary</code></td>
           <td class="ocn-type syn">Synthesize</td>
           <td>Ch1~Ch3를 종합해 Executive Summary 생성</td>
-          <td><code>Executive_Summary_Prompt.md</code> 로드(실패 시 fallback 프롬프트) · <code>_clean_invalid_citations()</code></td>
+          <td><code>Executive_Summary_Prompt.md</code> 로드(실패 시 fallback 프롬프트) / <code>_clean_invalid_citations()</code></td>
         </tr>
         <tr>
           <td><code>build_refs</code></td>
@@ -629,36 +668,36 @@
 
         <div class="problem-section-label cause">원인 분석</div>
         <div class="problem-text">
-          특허 검색은 외부 특허 API에 <code style="font-size:0.78em;">{assignee, keyword, cpc}</code>를 넘기는 <b>키워드·출원인 기반 구조화 질의</b>입니다(임베딩·벡터 유사도가 아닙니다).
+          특허 검색은 외부 특허 API에 <code style="font-size:0.78em;">{assignee, keyword, cpc}</code>를 넘기는 <b>키워드/출원인 기반 구조화 질의</b>입니다(임베딩/벡터 유사도가 아닙니다).
           따라서 누락의 근본 원인은 <b>성격이 다른 두 종류의 recall 실패</b>이며, 같은 처방으로 풀 수 없습니다.<br /><br />
 
-          <b>① 기술명 불일치 — 입력 용어 ≠ 특허 기재 용어 (recall 문제)</b><br />
-          • <b>명세서의 의도적 추상화</b>: 출원인은 권리범위(claim scope)를 넓히려 상위 개념어·기능적 표현을 <i>의도적으로</i> 사용합니다. "GLP-1 작용제"로 검색해도 명세서엔 "인크레틴 모방 펩타이드"로 기재되며 — 이는 노이즈가 아니라 특허 문서의 <b>구조적 특성</b>입니다.<br />
-          • <b>다국어 출원</b>: 동일 기술이 EN/KO/ZH/JA로 각기 다른 용어로 출원돼, 입력 언어 하나로는 회수 범위가 좁습니다.<br />
-          • 구조화 키워드 검색에선 <b>"글자 그대로 매칭되는 검색어 집합을 얼마나 넓히느냐"</b>가 recall을 좌우합니다.<br /><br />
+          <b>① 기술명 불일치: 입력 용어 ≠ 특허 기재 용어 (recall 문제)</b><br />
+          - <b>명세서의 의도적 추상화</b>: 출원인은 권리범위(claim scope)를 넓히려 상위 개념어/기능적 표현을 <i>의도적으로</i> 사용합니다. "GLP-1 작용제"로 검색해도 명세서엔 "인크레틴 모방 펩타이드"로 기재되며, 이는 노이즈가 아니라 특허 문서의 <b>구조적 특성</b>입니다.<br />
+          - <b>다국어 출원</b>: 동일 기술이 EN/KO/ZH/JA로 각기 다른 용어로 출원돼, 입력 언어 하나로는 회수 범위가 좁습니다.<br />
+          - 구조화 키워드 검색에선 <b>"글자 그대로 매칭되는 검색어 집합을 얼마나 넓히느냐"</b>가 recall을 좌우합니다.<br /><br />
 
-          <b>② 출원인명 불일치 — 동일 개체의 표기 변이 (entity resolution 문제)</b><br />
-          • <b>법인 표기 변이</b>: 법적 접미사(Co., Ltd. / 주식회사), 약어("Therapeutics" → "TX"), 한·영·중·일 표기 차이.<br />
-          • <b>출원 주체 ≠ 브랜드</b>: 특허청은 <i>출원 당시 출원인</i>을 기록 — 모회사 브랜드가 아니라 자회사·지주사로 등록된 경우가 흔합니다 → 검색 전 <b>정규화</b>가 선행돼야 합니다.
+          <b>② 출원인명 불일치: 동일 개체의 표기 변이 (entity resolution 문제)</b><br />
+          - <b>법인 표기 변이</b>: 법적 접미사(Co., Ltd. / 주식회사), 약어("Therapeutics" → "TX"), 한/영/중/일 표기 차이.<br />
+          - <b>출원 주체 ≠ 브랜드</b>: 특허청은 <i>출원 당시 출원인</i>을 기록합니다. 모회사 브랜드가 아니라 자회사/지주사로 등록된 경우가 흔하므로 검색 전 <b>정규화</b>가 선행돼야 합니다.
         </div>
 
         <div class="problem-section-label solve">해결 접근</div>
         <div class="solve-steps">
           <div class="solve-step">
             <div class="solve-step-num">1</div>
-            <div><b>다국어 계층 키워드 + 특허 어휘 확장 (① 대응)</b> — <code>_get_tiered_keywords()</code>가 LLM(Gemini)으로 기술명을 <b>EN/KO/ZH/JA 계층 키워드</b>로 확장하고, <code>_get_patent_vocabulary()</code>가 기술×기업 도메인의 특허 전문 용어를 추가 생성합니다. 둘을 <code>en_base + patent_vocab + expanded_techs</code> 합집합으로 묶어, 입력 1개를 다국어·전문용어 N개의 검색어 집합으로 넓혀 recall을 확보합니다.</div>
+            <div><b>다국어 계층 키워드 + 특허 어휘 확장 (① 대응)</b>: <code>_get_tiered_keywords()</code>가 LLM(Gemini)으로 기술명을 <b>EN/KO/ZH/JA 계층 키워드</b>로 확장하고, <code>_get_patent_vocabulary()</code>가 기술×기업 도메인의 특허 전문 용어를 추가 생성합니다. 둘을 <code>en_base + patent_vocab + expanded_techs</code> 합집합으로 묶어, 입력 1개를 다국어/전문용어 N개의 검색어 집합으로 넓혀 recall을 확보합니다.</div>
           </div>
           <div class="solve-step">
             <div class="solve-step-num">2</div>
-            <div><b>다중 출원인 변형 매칭 (② 대응 · normalizer 연계)</b> — 정규화 단계(<code>standardize_entities()</code>)가 기업명 하나를 출원인 표기 변형 리스트 <code>company_assignees</code>와 언어별 표기(<code>company_ja</code>·<code>company_zh</code>)로 확장합니다. 검색기는 (키워드 × <b>모든 출원인 변형</b>) 조합을 순회하고, 자회사는 Tavily로 모회사까지 해소해 누락을 막습니다.</div>
+            <div><b>다중 출원인 변형 매칭 (② 대응 / normalizer 연계)</b>: 정규화 단계(<code>standardize_entities()</code>)가 기업명 하나를 출원인 표기 변형 리스트 <code>company_assignees</code>와 언어별 표기(<code>company_ja</code>/<code>company_zh</code>)로 확장합니다. 검색기는 (키워드 × <b>모든 출원인 변형</b>) 조합을 순회하고, 자회사는 Tavily로 모회사까지 해소해 누락을 막습니다.</div>
           </div>
           <div class="solve-step">
             <div class="solve-step-num">3</div>
-            <div><b>CPC 분류 기반 보충 검색 (① 핵심)</b> — 1차 검색 결과의 특허 분류코드를 집계해 상위 3개를 추출(<code>cpc_counter.most_common(3)</code>)하고, 그 <b>CPC + 출원인</b>으로 재검색합니다. <b>용어가 전혀 달라도 같은 기술 분류에 속한 특허를 회수</b>하며 — 임베딩 없이 특허청의 분류체계(CPC)를 신호로 삼아 어휘 불일치를 우회한 것이 이 설계의 핵심입니다.</div>
+            <div><b>CPC 분류 기반 보충 검색 (① 핵심)</b>: 1차 검색 결과의 특허 분류코드를 집계해 상위 3개를 추출(<code>cpc_counter.most_common(3)</code>)하고, 그 <b>CPC + 출원인</b>으로 재검색합니다. <b>용어가 전혀 달라도 같은 기술 분류에 속한 특허를 회수</b>합니다. 임베딩 없이 특허청의 분류체계(CPC)를 신호로 삼아 어휘 불일치를 우회한 것이 이 설계의 핵심입니다.</div>
           </div>
           <div class="solve-step">
             <div class="solve-step-num">4</div>
-            <div><b>중복 제거 + 랭킹</b> — <b>Family ID 그룹화</b>(같은 특허 패밀리는 최신 1건 유지, relevance score는 max 승계) + <b>동일 제목 2차 제거</b> 후, <b>특허 API가 반환한 relevance score 내림차순</b>으로 Top-30을 선정합니다. 비영어 제목은 <code>_translate_to_english()</code>로 영문 정규화합니다(독일어 복합어까지 탐지). <span style="color:#64748b;">— 별도 reranker를 두지 않은 이유는, 병목이 정밀도 정렬이 아니라 recall(관련 특허 누락)이었기에 재정렬 대신 회수 단계(키워드·CPC·출원인 확장)에 집중했기 때문입니다.</span></div>
+            <div><b>중복 제거 + 랭킹</b>: <b>Family ID 그룹화</b>(같은 특허 패밀리는 최신 1건 유지, relevance score는 max 승계) + <b>동일 제목 2차 제거</b> 후, <b>특허 API가 반환한 relevance score 내림차순</b>으로 Top-30을 선정합니다. 비영어 제목은 <code>_translate_to_english()</code>로 영문 정규화합니다(독일어 복합어까지 탐지). <span style="color:#64748b;">별도 reranker를 두지 않은 이유는, 병목이 정밀도 정렬이 아니라 recall(관련 특허 누락)이었기에 재정렬 대신 회수 단계(키워드/CPC/출원인 확장)에 집중했기 때문입니다.</span></div>
           </div>
         </div>
 
@@ -678,24 +717,24 @@
 
         <div class="problem-section-label cause">원인 분석</div>
         <div class="problem-text">
-          <b>① 표면적 특허 데이터의 한계</b> — 특허 번호와 제목만으로는 실제 비즈니스 임팩트나 기술의 성숙도를 판단하기 어렵습니다.<br />
-          <b>② 특허와 실제 비즈니스의 단절</b> — 특허로 확보했더라도 상업화되지 않은 기술인지, 실제 매출을 발생시킨 기술인지 확인하기 어렵습니다.<br />
-          <b>③ 기술 성숙도 평가의 부재</b> — 연구실 단계인지, 파일럿 단계인지, 상용화 완료 단계인지 명확한 구분이 없습니다.
+          <b>① 표면적 특허 데이터의 한계</b>: 특허 번호와 제목만으로는 실제 비즈니스 임팩트나 기술의 성숙도를 판단하기 어렵습니다.<br />
+          <b>② 특허와 실제 비즈니스의 단절</b>: 특허로 확보했더라도 상업화되지 않은 기술인지, 실제 매출을 발생시킨 기술인지 확인하기 어렵습니다.<br />
+          <b>③ 기술 성숙도 평가의 부재</b>: 연구실 단계인지, 파일럿 단계인지, 상용화 완료 단계인지 명확한 구분이 없습니다.
         </div>
 
         <div class="problem-section-label solve">해결 접근</div>
         <div class="solve-steps">
           <div class="solve-step">
             <div class="solve-step-num">1</div>
-            <div><b>특허-매출 교차 검증</b> — 특허 청구항(Claim)과 초록(Abstract)의 기술 내용을 실제 뉴스, 공시, 재무 데이터와 매핑해, 해당 특허가 실제 사업화되어 매출을 발생시킨 기술인지 판별합니다.</div>
+            <div><b>특허-매출 교차 검증</b>: 특허 청구항(Claim)과 초록(Abstract)의 기술 내용을 실제 뉴스, 공시, 재무 데이터와 매핑해, 해당 특허가 실제 사업화되어 매출을 발생시킨 기술인지 판별합니다.</div>
           </div>
           <div class="solve-step">
             <div class="solve-step-num">2</div>
-            <div><b>4-Dimension 기술 분석 프레임워크 도입</b> — 각 핵심 특허에 대해 (1) 해결하려던 문제, (2) 기술적 접근 방식, (3) 기대 효과, (4) 경쟁사 대비 차별점을 명시적으로 추출하고 분석합니다.</div>
+            <div><b>4-Dimension 기술 분석 프레임워크 도입</b>: 각 핵심 특허에 대해 (1) 해결하려던 문제, (2) 기술적 접근 방식, (3) 기대 효과, (4) 경쟁사 대비 차별점을 명시적으로 추출하고 분석합니다.</div>
           </div>
           <div class="solve-step">
             <div class="solve-step-num">3</div>
-            <div><b>TRL(Technology Readiness Level) + CRL(Commercial Readiness Level) 이중 평가</b> — 단순 기술 성숙도뿐 아니라 상용화 준비도까지 함께 평가해, 파이프라인의 현재 위치와 상용화까지의 거리를 정량화합니다.</div>
+            <div><b>TRL(Technology Readiness Level) + CRL(Commercial Readiness Level) 이중 평가</b>: 단순 기술 성숙도뿐 아니라 상용화 준비도까지 함께 평가해, 파이프라인의 현재 위치와 상용화까지의 거리를 정량화합니다.</div>
           </div>
         </div>
 
@@ -704,19 +743,10 @@
 
   </div>
 
-  <p class="project-section-title">Key Achievements</p>
-  <div class="project-body">
-    <p>
-      • 리포트 작성 소요 기간: 2주+ → 완전 자동화 (10분 이내 초안 생성)<br />
-      • 멀티소스 인텔리전스 통합 자동화 (재무·특허·뉴스)<br />
-      • 전사 배포 완료
-    </p>
-  </div>
-
 </article>
 
 <footer>
-  <p>Jaehee Hur © 2026 · jaeheehur02@gmail.com</p>
+  <p>Jaehee Hur © 2026 / jaeheehur02@gmail.com</p>
 </footer>
 
 </body>
