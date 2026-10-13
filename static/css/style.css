@@ -313,7 +313,7 @@ nav {
   padding: 4rem 2.5rem 6rem;
 }
 
-/* 본문 텍스트 가독 폭은 유지하되, 다이어그램·표 등 와이드 요소는 전체 폭 사용 */
+/* 본문 텍스트 가독 폭은 유지하되, 다이어그램/표 등 와이드 요소는 전체 폭 사용 */
 .project-detail > p,
 .project-detail > .project-body,
 .project-detail > .skills-section {
@@ -608,11 +608,14 @@ footer {
 }
 
 .work-card-list li::before {
-  content: '·';
+  content: "";
   position: absolute;
   left: 0.1em;
-  color: var(--accent-light);
-  font-weight: 700;
+  top: 0.82em;
+  width: 5px;
+  height: 5px;
+  border-radius: 2px;
+  background: var(--accent-light);
 }
 
 .work-card-tags {
@@ -653,4 +656,13 @@ footer {
   .career-entry::before { display: none; }
   .career-left { text-align: left; }
   .career-work-card.span-2 { grid-column: span 1; }
+}
+
+/* ── OTHER CARD LABEL (team / year) ── */
+.other-card-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }

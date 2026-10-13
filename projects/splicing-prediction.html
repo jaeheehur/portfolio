@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ko">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Splicing Site Prediction AI — Jaehee Hur</title>
+  <title>Splicing Site Prediction AI Platform / Jaehee Hur</title>
   <link rel="stylesheet" href="../static/css/style.css" />
   <link rel="stylesheet" href="../static/css/project-detail.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -24,75 +24,103 @@
   <a class="project-back" href="../projects.html">← Back to Projects</a>
 
   <div class="project-meta">
-    <span class="project-meta-label">LG Chem AX Technology Development Team · R&D Division · Jan. – Mar. 2024</span>
+    <span class="project-meta-label">LG화학 생명과학/경영혁신/AX팀</span>
+    <span class="project-meta-label">R&amp;D 부문</span>
+    <span class="project-meta-label">2024.01 ~ 2024.03</span>
   </div>
 
   <h1>Splicing Site Prediction AI Platform</h1>
 
   <p class="project-detail-desc">
-    신약 개발 초기 단계에서 단백질 생성 과정에 영향을 미치는 Splicing 변이를 조기에 식별하기 위한
-    AI 예측 플랫폼. 다양한 Splicing 예측 모델을 로컬 환경에서 통합 추론하고 직관적으로 비교할 수 있는
-    Dash 기반 플랫폼으로, 후보 물질 선별 단계에서의 위험 조기 감지를 목표로 합니다.
+    신약 개발 초기 단계에서 단백질 생성 과정에 영향을 미치는 Splicing 변이를 조기에 식별하기 위한 AI 예측 플랫폼. 다양한 Splicing 예측 모델을 로컬 환경에서 통합 추론하고 직관적으로 비교할 수 있는 Dash 기반 플랫폼으로, 후보 물질 선별 단계에서의 위험 조기 감지를 목표로 합니다.
   </p>
 
   <div class="skills-section">
-    <p class="project-section-title">Skills & Technologies</p>
+    <p class="project-section-title">Skills &amp; Technologies</p>
     <div class="skills-grid">
       <span class="skill-tag">Python</span>
       <span class="skill-tag">Deep Learning</span>
       <span class="skill-tag">PyTorch</span>
       <span class="skill-tag">Bioinformatics</span>
       <span class="skill-tag">Sequence Modeling</span>
+      <span class="skill-tag">Plotly/Dash</span>
+    </div>
+  </div>
+
+  <p class="project-section-title">Overview</p>
+  <div class="project-body">
+    <p>
+      외부 서버 대신 로컬에 내재화한 여러 Splicing 예측 모델에 같은 서열을 넣어 추론하고, 모델별 결과를 한 화면에서 비교하며 주요 변이를 하이라이팅해 보여주는 구조입니다.
+    </p>
+  </div>
+  <div class="flow">
+    <div class="flow-step">
+      <div class="flow-num">01</div>
+      <div class="flow-title">서열 입력</div>
+      <div class="flow-desc">연구자가 분석할 서열 입력</div>
+    </div>
+    <div class="flow-arrow"></div>
+    <div class="flow-step">
+      <div class="flow-num">02</div>
+      <div class="flow-title">로컬 모델 통합 추론</div>
+      <div class="flow-desc">내재화한 여러 Splicing 예측 모델로 동시 추론</div>
+    </div>
+    <div class="flow-arrow"></div>
+    <div class="flow-step">
+      <div class="flow-num">03</div>
+      <div class="flow-title">모델별 결과 비교</div>
+      <div class="flow-desc">예측 결과를 테이블로 나란히 비교</div>
+    </div>
+    <div class="flow-arrow"></div>
+    <div class="flow-step">
+      <div class="flow-num">04</div>
+      <div class="flow-title">변이 하이라이팅</div>
+      <div class="flow-desc">Rule 기반으로 주요 Splicing 변이 강조</div>
+    </div>
+    <div class="flow-arrow"></div>
+    <div class="flow-step">
+      <div class="flow-num">05</div>
+      <div class="flow-title">의사결정 지원</div>
+      <div class="flow-desc">후보 물질 선별 단계의 리스크 조기 감지</div>
     </div>
   </div>
 
   <p class="project-section-title">Problem</p>
   <div class="project-body">
     <p>
-      신약 개발 초기 단계에서 단백질 생성 과정에 미치는 Splicing 변이의 조기 식별이 매우 중요합니다.
-      전세계적으로 Splicing 예측 AI 연구가 활발히 진행되었으나, 내부 데이터 보안 문제로 외부 서버의 AI 모델 사용이 불가능하여
-      연구원들의 실험 비효율 및 연구 속도 저하가 발생했습니다.
+      신약 개발 초기 단계에서 단백질 생성 과정에 미치는 Splicing 변이의 조기 식별이 매우 중요합니다. 전세계적으로 Splicing 예측 AI 연구가 활발히 진행되었으나, 내부 데이터 보안 문제로 외부 서버의 AI 모델 사용이 불가능하여 연구원들의 실험 비효율 및 연구 속도 저하가 발생했습니다.
     </p>
     <p>
-      기존에는 이를 조기에 식별하는 체계적인 도구가 없어 개발 후반 단계에서야 문제가 드러나는 경우가 많았습니다.
-      효율적인 실험 진행을 위해 Splicing 예측 모델 내재화 및 모델별 결과를 직관적으로 비교할 수 있는 플랫폼에 대한 수요가 강하게 확인되었습니다.
+      기존에는 이를 조기에 식별하는 체계적인 도구가 없어 개발 후반 단계에서야 문제가 드러나는 경우가 많았습니다. 효율적인 실험 진행을 위해 Splicing 예측 모델 내재화 및 모델별 결과를 직관적으로 비교할 수 있는 플랫폼에 대한 수요가 강하게 확인되었습니다.
     </p>
   </div>
 
   <p class="project-section-title">Solution</p>
   <div class="project-body">
     <p>
-      <b>통합 추론 플랫폼:</b> 다양한 Splicing 예측 AI 모델을 로컬 환경에서 통합 추론할 수 있도록 Dash 기반 플랫폼을 구축했습니다.
-      단백질 서열 입력 시 모델별 예측 결과를 테이블 형태로 비교할 수 있는 대시보드를 설계했습니다.
+      <b>통합 추론 플랫폼:</b> 다양한 Splicing 예측 AI 모델을 로컬 환경에서 통합 추론할 수 있도록 Dash 기반 플랫폼을 구축했습니다. 서열 입력 시 모델별 예측 결과를 테이블 형태로 비교할 수 있는 대시보드를 설계했습니다.
     </p>
     <p>
-      <b>시각화 및 해석:</b> 주요 Splicing 변이에 Rule 기반으로 하이라이팅하여 현업에서 직관적으로 예측 결과를 비교하고 해석할 수 있도록 시각화합니다.
-      연구자가 별도의 전문 지식 없이도 모델별 예측값의 차이를 빠르게 파악하고 의사결정할 수 있습니다.
+      <b>시각화 및 해석:</b> 주요 Splicing 변이에 Rule 기반으로 하이라이팅하여 현업에서 직관적으로 예측 결과를 비교하고 해석할 수 있도록 시각화합니다. 연구자가 별도의 전문 지식 없이도 모델별 예측값의 차이를 빠르게 파악하고 의사결정할 수 있습니다.
     </p>
     <p>
-      <b>보안 강화:</b> AI 모델을 로컬 환경에 내재화하여 중요한 단백질 서열 데이터가 외부 서버로 유출되는 위험을 완전히 제거합니다.
+      <b>보안 강화:</b> AI 모델을 로컬 환경에 내재화하여 중요한 서열 데이터가 외부 서버로 유출되는 위험을 제거합니다.
     </p>
   </div>
 
   <p class="project-section-title">Key Achievements</p>
-  <div class="project-body">
-    <p>
-      • 신약 개발 초기 단계에서의 Splicing 변이 조기 식별 체계 구축<br />
-      • AI 모델 내재화를 통한 내부 데이터 유출 위험 제거<br />
-      • 다중 모델 비교를 통한 연구원 의사결정 속도 및 실험 효율성 개선<br />
-      • R&D 리스크 조기 감지를 통한 후보 물질 선별 효율화
-    </p>
-  </div>
-
+  <ul class="achievement-list">
+    <li>신약 개발 초기 단계에서의 Splicing 변이 조기 식별 체계 구축</li>
+    <li>AI 모델 내재화를 통한 내부 데이터 유출 위험 제거</li>
+    <li>다중 모델 비교를 통한 연구원 의사결정 속도 및 실험 효율성 개선</li>
+    <li>R&amp;D 리스크 조기 감지를 통한 후보 물질 선별 효율화</li>
+  </ul>
 
 </article>
 
 <footer>
-  <p>Jaehee Hur © 2026 · jaeheehur02@gmail.com</p>
+  <p>Jaehee Hur © 2026 / jaeheehur02@gmail.com</p>
 </footer>
 
 </body>
 </html>
-
-
-
